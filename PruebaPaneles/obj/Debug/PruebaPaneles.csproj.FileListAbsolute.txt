@@ -140,3 +140,11 @@ C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPanel
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\vi\System.Windows.Controls.Data.Input.resources.dll
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\zh-Hans\System.Windows.Controls.Data.Input.resources.dll
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\zh-Hant\System.Windows.Controls.Data.Input.resources.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\Microsoft.Expression.Effects.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\Microsoft.Expression.Effects.xml
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoCuadrado.g.i.cs
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoCirculo.g.i.cs

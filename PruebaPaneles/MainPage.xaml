@@ -10,10 +10,10 @@
         			<StackPanel>
         				<sdk:Label Content="Nodos y Ramas" FontWeight="Bold" Foreground="#FF9B3EFD" FontFamily="Aharoni" FontSize="14.667" Margin="0,5,0,0"/>
         				<Grid Height="82">
-                            <Button Margin="8,8,110,0" VerticalAlignment="Top" Width="30" Height="30" BorderBrush="{x:Null}" Background="{x:Null}" Cursor="Hand" ClickMode="Press" ToolTipService.ToolTip="Rectángulo" Name="btCuadrado" >
+                            <Button Margin="8,8,110,0" VerticalAlignment="Top" Width="30" Height="30" BorderBrush="{x:Null}" Background="{x:Null}" Cursor="Hand" ClickMode="Press" ToolTipService.ToolTip="Rectángulo" Name="btCuadrado" Click="btCuadrado_Click">
                             	<Image Height="25" Source="Images/cuadrado.png" Stretch="Fill" Width="25"/>
                             </Button>
-                            <Button Margin="42,8,76,0" VerticalAlignment="Top" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Círculo" Name="btCirculo" Cursor="Hand">
+                            <Button Margin="42,8,76,0" VerticalAlignment="Top" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Círculo" Name="btCirculo" Cursor="Hand" Click="btCirculo_Click">
                             	<Image Height="25" Source="Images/circulo.png" Stretch="Fill" Width="25"/>
                             </Button>
                             <Button Margin="76,8,42,0" VerticalAlignment="Top" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Triángulo" Name="btTriangulo" Cursor="Hand">
@@ -174,16 +174,16 @@
         	<sdk:TreeView/>
         </Border>
         <Border x:Name="borderNotes" toolkit:DockPanel.Dock="Bottom" Background="White" BorderBrush="#FF9B3EFD" BorderThickness="2" CornerRadius="5" Margin="2,2,2,0">
-            <toolkit:DockPanel x:Name="dpNotes" LastChildFill="False" Margin="4,4,4,0" toolkit:DockPanel.Dock="Bottom" Background="White" Height="150">
+            <toolkit:DockPanel x:Name="dpNotes" LastChildFill="False" Margin="4,4,4,0" toolkit:DockPanel.Dock="Bottom" Background="White" Height="100">
                 <sdk:Label toolkit:DockPanel.Dock="Top" Content="Notas" Margin="4,4,0,0" Foreground="#FF9B3EFD" FontFamily="Aharoni" FontSize="14.667"/>
-                <RichTextBox Foreground="{x:Null}" toolkit:DockPanel.Dock="Top" Height="125" Margin="4,0" BorderThickness="0">
+                <RichTextBox Foreground="Black" toolkit:DockPanel.Dock="Top" Height="75" Margin="4,0" BorderThickness="0">
                     <Paragraph><Run Text=""/></Paragraph>
                 </RichTextBox>
             </toolkit:DockPanel>
         </Border>
         <Border x:Name="borderDiagram" BorderBrush="#FF9B3EFD" BorderThickness="2" CornerRadius="5" Background="White" toolkit:DockPanel.Dock="Top" Margin="2,0,2,2">
         	<ScrollViewer VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Visible" Margin="0" Background="#FFFDFDFD" x:Name="svDiagram">
-        		<Canvas Width="1000" Height="1000" Background="#FFFDFDFD" x:Name="cvDiagram"/>
+        		<Canvas Width="1000" Height="1000" Background="#FFFDFDFD" x:Name="cvDiagram" />
         	</ScrollViewer>
         </Border>
     </toolkit:DockPanel>
