@@ -1,0 +1,5 @@
+c:\users\fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles.Web\bin\PruebaPaneles.Web.dll
+c:\users\fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles.Web\bin\PruebaPaneles.Web.pdb
+c:\users\fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles.Web\obj\Debug\ResolveAssemblyReference.cache
+c:\users\fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles.Web\obj\Debug\PruebaPaneles.Web.dll
+c:\users\fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles.Web\obj\Debug\PruebaPaneles.Web.pdb

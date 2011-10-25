@@ -1,0 +1,190 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:System_Windows_Controls_Primitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="PruebaPaneles.MainPage"
+    d:DesignHeight="638" d:DesignWidth="1061" mc:Ignorable="d">
+	<toolkit:DockPanel LastChildFill="False" Background="#FFBEBBBB">
+        <Border x:Name="borderButtons" BorderBrush="#FF9B3EFD" BorderThickness="2" Margin="0,0,2,0" CornerRadius="5" Background="White">
+        	<StackPanel Width="160" Margin="4">
+                <Viewbox Margin="0" Width="160" Height="100" Stretch="None">
+                	<Image Height="100" Source="Images/logo.png" Width="160"/>
+                </Viewbox>
+                <Border BorderBrush="LightGray" BorderThickness="1" Height="100" CornerRadius="5" Padding="0" Margin="0,2">
+        			<StackPanel>
+        				<sdk:Label Content="Nodos y Ramas" FontWeight="Bold" Foreground="#FF9B3EFD" FontFamily="Aharoni" FontSize="14.667" Margin="0,5,0,0"/>
+        				<Grid Height="82">
+                            <Button Margin="8,8,110,0" VerticalAlignment="Top" Width="30" Height="30" BorderBrush="{x:Null}" Background="{x:Null}" Cursor="Hand" ClickMode="Press" ToolTipService.ToolTip="Rectángulo" Name="btCuadrado" >
+                            	<Image Height="25" Source="Images/cuadrado.png" Stretch="Fill" Width="25"/>
+                            </Button>
+                            <Button Margin="42,8,76,0" VerticalAlignment="Top" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Círculo" Name="btCirculo" Cursor="Hand">
+                            	<Image Height="25" Source="Images/circulo.png" Stretch="Fill" Width="25"/>
+                            </Button>
+                            <Button Margin="76,8,42,0" VerticalAlignment="Top" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Triángulo" Name="btTriangulo" Cursor="Hand">
+                            	<Image Height="25" Source="Images/triangulo.png" Stretch="Fill" Width="25"/>
+                            </Button>
+                            <Button Margin="8,0,110,8" VerticalAlignment="Bottom" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Nube" Name="btNube" Cursor="Hand">
+                            	<Image Height="25" Source="Images/nube.png" Stretch="Fill" Width="25"/>
+                            </Button>
+                            <Button Margin="42,0,76,8" VerticalAlignment="Bottom" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Línea" Name="btLinea" Cursor="Hand">
+                            	<Image Height="25" Source="Images/linea.png" Stretch="Fill" Width="25"/>
+                            </Button>
+                            <Button Margin="110,0,8,8" VerticalAlignment="Bottom" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Nota" Name="btChincheta" Cursor="Hand">
+                            	<Image Height="25" Source="Images/chincheta.png" Stretch="Fill" Width="25"/>
+                            </Button>
+                            <Button Margin="115,8,13,0" VerticalAlignment="Top" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Pentágono" Name="btPentagono" Cursor="Hand">
+                            	<Image Height="25" Source="Images/pentagono.png" Stretch="Fill" Width="25"/>
+                            </Button>
+                            <Button Margin="81,0,47,8" VerticalAlignment="Bottom" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Flecha" Name="btFlecha" Cursor="Hand">
+                            	<Image Height="25" Source="Images/flecha.png" Stretch="Fill" Width="25"/>
+                            </Button>
+        				</Grid>
+        			</StackPanel>
+        		</Border>
+                <Border BorderBrush="LightGray" BorderThickness="1" Height="134" CornerRadius="5" Padding="0" Margin="0,2">
+        			<StackPanel>
+        				<sdk:Label Content="Iconos" FontWeight="Bold" Foreground="#FF9B3EFD" FontFamily="Aharoni" FontSize="14.667" Margin="0,5,0,0"/>
+        				<ScrollViewer Height="110" BorderThickness="0">
+        					<Grid Height="360" Width="158">
+                                <Button Margin="13,8,115,0" VerticalAlignment="Top" Width="30" Height="30" Name="btBandera" ToolTipService.ToolTip="Bandera" BorderThickness="1" BorderBrush="{x:Null}" Background="{x:Null}" Cursor="Hand">
+        							<Image Height="25" Source="Images/bandera.png" Stretch="Fill" Width="25"/>
+        						</Button>
+                                <Button Margin="47,8,81,0" VerticalAlignment="Top" Width="30" Height="30" Name="btBolaNav" ToolTipService.ToolTip="Bola de Navidad" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+        							<Image Height="25" Source="Images/bolanavidad.png" Stretch="Fill" Width="25"/>
+        						</Button>
+                                <Button Margin="81,8,47,0" VerticalAlignment="Top" Width="30" Height="30" Name="btBolsaPapel" ToolTipService.ToolTip="Bolsa de Papel" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+        							<Image Height="25" Source="Images/bolsapapel.png" Stretch="Fill" Width="25"/>
+        						</Button>
+                                <Button Height="30" Margin="13,44,115,0" VerticalAlignment="Top" Width="30" Name="btCopa" ToolTipService.ToolTip="Copa" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/copa.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="47,44,81,0" VerticalAlignment="Top" Width="30" Name="btCorreo" ToolTipService.ToolTip="Sobre" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/correo.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="81,44,47,0" VerticalAlignment="Top" Width="30" Name="btCubilete" ToolTipService.ToolTip="Cilindro" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/cubilete.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="13,80,115,0" VerticalAlignment="Top" Width="30" Name="btEmail" ToolTipService.ToolTip="Arroba" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/email.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="47,80,81,0" VerticalAlignment="Top" Width="30" Name="btEstrella" ToolTipService.ToolTip="Estrella" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/estrella.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="81,80,47,0" VerticalAlignment="Top" Width="30" Name="btEtiqueta" ToolTipService.ToolTip="Etiqueta" BorderBrush="{x:Null}" Background="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/etiqueta.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="13,115,115,0" VerticalAlignment="Top" Width="30" Name="btInformacion" ToolTipService.ToolTip="Información" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/informacion.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="47,115,81,0" VerticalAlignment="Top" Width="30" Name="btInterrogacion" ToolTipService.ToolTip="Interrogación" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/interrogacion.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="81,115,47,0" VerticalAlignment="Top" Width="30" Name="btMaletin" ToolTipService.ToolTip="Maletín" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/maletin.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="13,151,115,0" VerticalAlignment="Top" Width="30" Name="btMando" ToolTipService.ToolTip="Mando de Consola" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/mando.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="47,151,81,0" VerticalAlignment="Top" Width="30" Name="btMariposa" ToolTipService.ToolTip="Mariposa" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/mariposa.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="81,151,47,0" VerticalAlignment="Top" Width="30" Name="btMas" ToolTipService.ToolTip="Más" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/mas.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="13,187,115,0" VerticalAlignment="Top" Width="30" Name="btMenos" ToolTipService.ToolTip="Menos" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/menos.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="47,187,81,0" VerticalAlignment="Top" Width="30" Name="btMovil" ToolTipService.ToolTip="Móvil" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/movil.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="81,187,47,0" VerticalAlignment="Top" Width="30" Name="btMundo" ToolTipService.ToolTip="Mundo" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/mundo.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="13,223,115,0" VerticalAlignment="Top" Width="30" Name="btRegalo" ToolTipService.ToolTip="Regalo" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/regalo.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="47,223,81,0" VerticalAlignment="Top" Width="30" Name="btReloj" ToolTipService.ToolTip="Reloj" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/reloj.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="81,223,47,0" VerticalAlignment="Top" Width="30" Name="btTv" ToolTipService.ToolTip="Televisor" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/tv.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="13,258,115,0" VerticalAlignment="Top" Width="30" Name="btBlogger" ToolTipService.ToolTip="Blogger" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/blogger.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="47,258,81,0" VerticalAlignment="Top" Width="30" Name="btEbay" ToolTipService.ToolTip="Ebay" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/ebay.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="81,258,47,0" VerticalAlignment="Top" Width="30" Name="btFacebook" ToolTipService.ToolTip="Facebook" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/facebook.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="13,294,115,0" VerticalAlignment="Top" Width="30" Name="btRss" ToolTipService.ToolTip="Rss" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/rss.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="47,294,81,0" VerticalAlignment="Top" Width="30" Name="btSkype" ToolTipService.ToolTip="Skype" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/skype.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="81,294,47,0" VerticalAlignment="Top" Width="30" Name="btTwitter" ToolTipService.ToolTip="Twitter" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/twitter.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="13,330,115,0" VerticalAlignment="Top" Width="30" Name="btWordpress" ToolTipService.ToolTip="Wordpress" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/wordpress.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="47,330,81,0" VerticalAlignment="Top" Width="30" Name="btYahoo" ToolTipService.ToolTip="Yahoo" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/yahoo.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                                <Button Height="30" Margin="81,330,47,0" VerticalAlignment="Top" Width="30" Name="btYoutube" ToolTipService.ToolTip="Youtube" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="1" Cursor="Hand">
+                                	<Image Height="25" Source="Images/youtube.png" Stretch="Fill" Width="25"/>
+                                </Button>
+                            </Grid>
+        				</ScrollViewer>
+        			</StackPanel>
+        		</Border>
+                <Border BorderBrush="LightGray" BorderThickness="1" Height="74" CornerRadius="5" Margin="0,2">
+        			<StackPanel Height="69">
+        				<sdk:Label Content="Propiedades" FontWeight="Bold" Foreground="#FF9B3EFD" FontFamily="Aharoni" FontSize="14.667" Margin="0,5,0,0"/>
+        				<Grid Height="46">
+                            <Button Margin="8,8,110,0" VerticalAlignment="Top" Width="30" Height="30" Name="btTexto" ToolTipService.ToolTip="Texto" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+        						<Image Source="Images/texto.png" Stretch="Fill" Width="25" Height="25"/>
+        					</Button>
+                            <Button Margin="42,8,76,0" VerticalAlignment="Top" Width="30" Height="30" Name="btColores" ToolTipService.ToolTip="Colores" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+        						<Image Source="Images/colores.png" Stretch="Fill" Width="25" Height="25"/>
+        					</Button>
+                        </Grid>
+        			</StackPanel>
+        		</Border>
+                <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="0,2">
+        			<StackPanel Height="62">
+        				<sdk:Label Content="Control" FontWeight="Bold" Foreground="#FF9B3EFD" FontFamily="Aharoni" FontSize="14.667" Margin="0,5,0,0"/>
+        				<Grid Height="43">
+                            <Button Margin="8,8,110,0" VerticalAlignment="Top" Width="30" Height="30" Name="btNuevo" ToolTipService.ToolTip="Nuevo" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" >
+        						<Image Source="Images/nuevo.png" Stretch="Fill" Width="25" Height="25"/>
+        					</Button>
+                            <Button Margin="42,8,76,0" VerticalAlignment="Top" Width="30" Height="30" Name="btDescargar" ToolTipService.ToolTip="Descargar" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" >
+        						<Image Source="Images/descargar.png" Stretch="Fill" Width="25" Height="25"/>
+        					</Button>
+                            <Button Margin="76,8,42,0" VerticalAlignment="Top" Width="30" Height="30" Name="btPDF" ToolTipService.ToolTip="Descargar PDF" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" >
+        						<Image Source="Images/pdf.png" Stretch="Fill" Width="25" Height="25"/>
+        					</Button>
+                            <Button Margin="110,8,8,0" Width="30" Height="30" VerticalAlignment="Top" Name="btSalir" ToolTipService.ToolTip="Salir" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" >
+        						<Image Source="Images/salir.png" Stretch="Fill" Width="25" Height="25"/>
+        					</Button>
+        				</Grid>
+        			</StackPanel>
+        		</Border>
+        	</StackPanel>
+        </Border>
+        <Border x:Name="borderTrees" BorderBrush="#FF9B3EFD" BorderThickness="2" CornerRadius="5" toolkit:DockPanel.Dock="Right" Background="White" Width="200" Margin="2,0,0,0">
+        	<sdk:TreeView/>
+        </Border>
+        <Border x:Name="borderNotes" toolkit:DockPanel.Dock="Bottom" Background="White" BorderBrush="#FF9B3EFD" BorderThickness="2" CornerRadius="5" Margin="2,2,2,0">
+            <toolkit:DockPanel x:Name="dpNotes" LastChildFill="False" Margin="4,4,4,0" toolkit:DockPanel.Dock="Bottom" Background="White" Height="150">
+                <sdk:Label toolkit:DockPanel.Dock="Top" Content="Notas" Margin="4,4,0,0" Foreground="#FF9B3EFD" FontFamily="Aharoni" FontSize="14.667"/>
+                <RichTextBox Foreground="{x:Null}" toolkit:DockPanel.Dock="Top" Height="125" Margin="4,0" BorderThickness="0">
+                    <Paragraph><Run Text=""/></Paragraph>
+                </RichTextBox>
+            </toolkit:DockPanel>
+        </Border>
+        <Border x:Name="borderDiagram" BorderBrush="#FF9B3EFD" BorderThickness="2" CornerRadius="5" Background="White" toolkit:DockPanel.Dock="Top" Margin="2,0,2,2">
+        	<ScrollViewer VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Visible" Margin="0" Background="#FFFDFDFD" x:Name="svDiagram">
+        		<Canvas Width="1000" Height="1000" Background="#FFFDFDFD" x:Name="cvDiagram"/>
+        	</ScrollViewer>
+        </Border>
+    </toolkit:DockPanel>
+</UserControl>
