@@ -148,3 +148,11 @@ C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPanel
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\System.Windows.Interactivity.xml
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoCuadrado.g.i.cs
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoCirculo.g.i.cs
+C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\Microsoft.Expression.Controls.dll
+C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\Microsoft.Expression.Controls.xml
+C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoTriangulo.g.i.cs
+C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoPentagono.g.i.cs
+C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoNube.g.i.cs
+C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoNota.g.i.cs

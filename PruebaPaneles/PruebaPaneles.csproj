@@ -61,6 +61,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Controls" />
+    <Reference Include="Microsoft.Expression.Drawing" />
     <Reference Include="Microsoft.Expression.Effects" />
     <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="mscorlib" />
@@ -92,6 +94,18 @@
     <Compile Include="View\NodoCirculo.xaml.cs">
       <DependentUpon>NodoCirculo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NodoNota.xaml.cs">
+      <DependentUpon>NodoNota.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NodoNube.xaml.cs">
+      <DependentUpon>NodoNube.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NodoPentagono.xaml.cs">
+      <DependentUpon>NodoPentagono.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NodoTriangulo.xaml.cs">
+      <DependentUpon>NodoTriangulo.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -107,6 +121,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NodoCirculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NodoNota.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NodoNube.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NodoPentagono.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NodoTriangulo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,6 +198,9 @@
     <Resource Include="Images\nuevo.png" />
     <Resource Include="Images\pdf.png" />
     <Resource Include="Images\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\post-it.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
