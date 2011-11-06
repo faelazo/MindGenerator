@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Mind Generator</title>
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <link href="css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript">
+
+        function compBrowser(){
+
+            if('\v'=='v'){
+
+                alert("Se ha detectado que utiliza el navegador "+navigator.appName+". Esta Web está optimizada para los navegadores Google Chrome y Mozilla Firefox."+'\n'+"No aseguramos que todo funcione correctamente si no utiliza uno de los navegadores recomendados. Puede encontrar la web de descarga pinchando sobre los iconos en la pagina principal.");
+            }
+        };
+
+        jQuery(document).ready(function () {
+
+            jQuery('#login').dialog({ modal: true, resizable: false, width: 300, autoOpen: false });
+            jQuery('#register').dialog({ modal: true, resizable: false, width: 420, autoOpen: false });
+            jQuery('#about').dialog({ resizable: false, width: 420, autoOpen: false, show: 'slide', hide: 'slide', position: ['right', 'top'] });
+            jQuery('#errorMessage').dialog({
+                modal: true, 
+                resizable: false, 
+                width: 300, 
+                height: 200,
+                autoOpen: false, 
+                buttons: {
+                            Ok: function(){ 
+                                    jQuery(this).dialog("close");
+                                }
+                         },
+                hide: 'explode'
+            });
+            jQuery('#changeBrowser').dialog({
+                modal: true, 
+                resizable: false, 
+                width: 300, 
+                height: 200,
+                autoOpen: false, 
+                buttons: {
+                            Ok: function(){ 
+                                    jQuery(this).dialog("close");
+                                }
+                         }
+            });
+
+            jQuery('button').button();
+            jQuery('#btLogin').click(function () {
+
+                jQuery('#login').dialog("open");
+            });
+            jQuery('#login').keypress(function(key){
+                
+                if(key.which == 13){
+                    
+                    if(jQuery('#ipUserLogin').get(0).value == ""){
+                    
+                        jQuery('#msg').text("User is empty");
+                        jQuery('#errorMessage').dialog("open");
+                    }else if(jQuery('#ipPassLogin').get(0).value == ""){
+                    
+                        jQuery('#msg').text("Password is empty");
+                        jQuery('#errorMessage').dialog("open");
+                    }else{
+                    
+                        jQuery('#ipUserLogin').get(0).value = "";
+                        jQuery('#ipPassLogin').get(0).value = "";
+                        jQuery(location).attr("href", "perfil.htm");
+                    }
+                }
+            });
+            jQuery('#btRegister').click(function () {
+
+                jQuery('#register').dialog("open");
+            });
+            jQuery('#btAccept').click(function () { 
+                
+                <!-- Comprobar Login-->
+                if(jQuery('#ipUserLogin').get(0).value == ""){
+                    
+                    jQuery('#msg').text("User is empty");
+                    jQuery('#errorMessage').dialog("open");
+                }else if(jQuery('#ipPassLogin').get(0).value == ""){
+                    
+                    jQuery('#msg').text("Password is empty");
+                    jQuery('#errorMessage').dialog("open");
+                }else{
+                    
+                    jQuery('#ipUserLogin').get(0).value = "";
+                    jQuery('#ipPassLogin').get(0).value = "";
+                    jQuery(location).attr("href", "perfil.htm");
+                }
+            });
+            jQuery('#btReset').click(function () {
+
+                jQuery('#ipUserLogin').get(0).value = "";
+                jQuery('#ipPassLogin').get(0).value = "";
+            });
+            jQuery('#btSave').click(function () {
+
+                if (jQuery('#ipUser').get(0).value == "") {
+
+                    jQuery('#msg').text("User is empty");
+                    jQuery('#errorMessage').dialog("open");
+                } else if (jQuery('#ipPass').get(0).value == "") {
+
+                    jQuery('#msg').text("Password is empty");
+                    jQuery('#errorMessage').dialog("open");
+                } else if (jQuery('#ipPass').get(0).value != jQuery('#ipConPass').get(0).value) {
+
+                    jQuery('#msg').text("Password isn\'t confirm");
+                    jQuery('#errorMessage').dialog("open");
+                } else {
+
+                    jQuery('#ipUser').get(0).value = "";
+                    jQuery('#ipPass').get(0).value = "";
+                    jQuery('#ipConPass').get(0).value = "";
+                    jQuery('#register').dialog("close");
+                }
+            });
+            jQuery('#btCancel').click(function () {
+
+                jQuery('#ipUser').get(0).value = "";
+                jQuery('#ipPass').get(0).value = "";
+                jQuery('#ipConPass').get(0).value = "";
+                jQuery('#register').dialog("close");
+            });
+            jQuery('#btAbout').click(function () {
+
+                jQuery('#about').dialog("open");
+            });
+        });
+        compBrowser();
+    </script>
+</head>
+<body>
+
+    <!-- Ventana modal de Login-->
+    <div id="login" title="Login">
+        
+        <table id="gridLogin">
+            <tr>
+                <td><label>User:</label></td>
+                <td><input id="ipUserLogin" /></td>
+            </tr>
+            <tr>
+                <td><label>Pass:</label></td>
+                <td><input id="ipPassLogin" type="password" /></td>
+            </tr>
+        </table>
+        <button class="btLogin" id="btAccept">Accept</button>
+        <button class="btLogin" id="btReset">Reset</button>
+        
+    </div>
+
+    <!-- Ventana modal de registro-->
+    <div id="register" title="Register">
+        
+        <table id="gridRegister">
+            <tr>
+                <td><label>Type User:</label></td>
+                <td><input id="ipUser" /></td>
+            </tr>
+            <tr>
+                <td><label>Type Password:</label></td>
+                <td><input id="ipPass" type="password"/></td>
+            </tr>
+            <tr>
+                <td><label>Confirm Password:</label></td>
+                <td><input id="ipConPass" type="password"/></td>
+            </tr>
+        </table>
+        <button class="btRegister" id="btSave">Save</button>
+        <button class="btRegister" id="btCancel">Cancel</button>
+    </div>
+
+    <!-- Ventana modal de About-->
+    <div id="about" title="About">
+        <p style="text-align:justify">Mind Generator es una plataforma Web con un editor de mapas mentales con los que puede organizar sus
+        ideas.</p>
+        <p style="text-align:justify">Cree, almacene y/o descargue sus ideas de una forma organizada y estructurada.</p>
+    </div>
+    
+    <!-- Pantalla principal-->
+    <div id="main">
+        
+        <div>
+            <button id="btAbout">About</button>
+        </div>
+        <div id="image">
+            <img src="css/images/mainLogo.png" />
+        </div>
+        <div id="buttons">
+            <table>
+                <tr>
+                    <td style="text-align:center; padding-right:30px;"><button id="btLogin" class="btMain">Login</button></td>
+                    <td style="text-align:center; padding-left:30px;"><button id="btRegister" class="btMain">Register</button></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="south">
+        <p>Web optimizada para los navegadores Google Chrome <a href="http://www.google.com/chrome?hl=es" target="_blank"><img src="css/images/chrome.png" /></a> y Mozilla Firefox <a href="http://www.mozilla.org/es-ES/firefox/new/" target="_blank"><img src="css/images/firefox.png" /></a></p>
+    </div>
+    
+    <!-- Ventana modal de mensajes de error-->
+    <div id="errorMessage" title="Error">
+        <p id="msg"></p>
+    </div>
+
+</body>
+</html>

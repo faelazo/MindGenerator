@@ -1,0 +1,126 @@
+﻿#versiones
+{
+    height:100%;
+    width:100%;
+}
+
+#title
+{
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+#lbTitle
+{
+    font-family: Calibri;
+    font-size: 28px;
+    font-style:italic;
+    font-weight: bold;
+    color: #8d26c0;
+}
+
+#info
+{
+    position:relative;
+    float: right;
+    margin-right: 10px;
+    margin-top: -10px;
+}
+
+.ui-icon
+{
+    background-image: url(images/ui-icons_8d26c0_256x240.png) !important;
+}
+
+#btInfo
+{
+    background: transparent;
+    border: none;
+}
+
+#radio
+{
+    float: right;
+    margin-right: 23%;
+}
+
+span.ui-button-text
+{
+    font-size: 0.6em;
+}
+
+#listVersion
+{
+    position: relative;
+    float: left;
+    top: 5px;
+    left: 0px;
+    width: 80%;
+    height: 90%;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+table.tableVer
+{
+    width: 95%;
+    margin-left: 20px;
+}
+
+.tableVer tr
+{
+    width: 100%;
+    height: auto;
+    margin-top:20px;
+    margin-bottom:20px;
+    background: #dedede;
+}
+
+.tableVer td
+{
+    text-align: center;
+    padding:1%;
+}
+
+td.nomVersion
+{
+    width: 20%;
+}
+
+td.descVersion
+{
+    width: 45%;
+    text-align: justify !important;
+}
+
+td.autVersion
+{
+    width: 15%;
+}
+
+td.fecVersion
+{
+    width: 15%;
+}
+
+td.checkVersion
+{
+    width: 5%;
+}
+
+#menu
+{
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
+#menu button
+{
+    width: 130px;
+    height: 30px;
+    margin-bottom: 10px;
+}

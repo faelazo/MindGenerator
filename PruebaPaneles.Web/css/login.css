@@ -1,0 +1,87 @@
+﻿table
+{
+    position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.btLogin
+{
+    position: relative;
+    float:left;
+    margin-left:6%;
+    margin-right:6%;
+    margin-top: 5px;
+    height: 30px;
+    width: 100px;
+}
+
+.btRegister
+{
+    position: relative;
+    float:left;
+    margin-left:12%;
+    margin-right:12%;
+    margin-top: 5px;
+    height: 30px;
+    width: 100px;
+}
+
+.btMain
+{
+    height: 30px;
+    width: 100px;
+}
+
+span.ui-button-text
+{
+    font-size: 0.8em;
+}
+
+#btAbout
+{
+    margin-left: 90%;
+    margin-right: 0px;
+    border: none;
+    background: none;
+}
+
+#main
+{
+    position:relative;
+    width: 100%;
+}
+
+#image
+{
+    position: relative;
+    margin-left:35%;
+    margin-top:3%;
+    margin-right: 35%;
+}
+
+#buttons
+{
+    position: relative;
+    margin-left:37%;
+    margin-top:-15px;
+}
+
+#errorMessage
+{
+    font-size: 18px;
+    text-align: center;
+}
+
+#south
+{
+    position:relative;
+    margin-left: 0%;
+    margin-top: 7%;
+    margin-bottom: 0px;
+}
+
+#south p
+{
+    font-size: 12px;
+}

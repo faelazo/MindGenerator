@@ -1,0 +1,71 @@
+﻿#title
+{
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+#lbTitle
+{
+    font-family: Calibri;
+    font-size: 28px;
+    font-style:italic;
+    font-weight: bold;
+    color: #8d26c0;
+}
+
+#info
+{
+    position:relative;
+    float: right;
+    margin-right: 10px;
+    margin-top: -10px;
+}
+
+.ui-icon
+{
+    background-image: url(images/ui-icons_8d26c0_256x240.png) !important;
+}
+
+#btInfo
+{
+    background-color: transparent;
+    border: none;
+}
+
+#listNotification
+{
+    position: relative;
+    float: left;
+    top: 5px;
+    left: 0px;
+    width: 80%;
+    height: 90%;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+table.tableNot
+{
+    width: 95%;
+    margin-left: 20px;
+}
+
+.tableNot tr
+{
+    width: 100%;
+    height: auto;
+    margin-top:20px;
+    margin-bottom:20px;
+    background: #dedede;
+}
+
+td.nomNot
+{
+    padding-left: 40px;
+}
+
+td.checkNot
+{
+    text-align: center;
+}

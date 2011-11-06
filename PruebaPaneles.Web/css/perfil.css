@@ -1,0 +1,73 @@
+﻿#north
+{
+    width: 100%;
+    height: 100px;
+}
+
+#logos
+{
+    float: left;
+    position: relative;
+    width: 30%;
+}
+
+#nombreLogo
+{
+    position: absolute;
+    
+}
+
+#logout
+{
+    position:relative;
+    float:right;
+}
+
+#lbBienvenido
+{
+    position: relative;
+    margin-top: 13px;
+    font-family: Calibri;
+    font-size: 12px;
+    margin-right:10px;
+}
+
+#lbUser
+{
+    position: relative;
+    margin-top: 13px;
+    font-family: Calibri;
+    font-style: italic;
+    font-size: 18px;
+}
+
+#btLogout
+{
+    border: none;
+    background: none;
+}
+
+#tabs
+{
+    background: transparent;
+    border: none;
+}
+
+#headerTabs.ui-widget-header
+{
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#headerTabs
+{
+    padding-left: 27%;
+}
+
+iframe
+{
+    width: 97%;
+    height: 430px;
+}

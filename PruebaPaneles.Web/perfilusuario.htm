@@ -1,0 +1,47 @@
+﻿<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<link href="css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+<link href="css/perfilUsuario.css" rel="stylesheet" type="text/css" />
+<script>
+
+    jQuery(document).ready(function () {
+
+        jQuery('#btEditUser').button();
+        jQuery('#btInfo').button();
+        jQuery('#btInfo').click(function () {
+
+            alert('Cerda');
+        });
+    });
+</script>
+
+<div id="perfil">
+    
+    <div id="title">
+        <label id="lbTitle">Perfil de Usuario</label>
+    </div>
+    <div id="info">
+        <button id="btInfo"><span class="ui-icon ui-icon-info"></span></button>
+    </div>
+    <div id="tableUser">
+        <table id="gridUser">
+            <tr>
+                <td><label>User:</label></td>
+                <td><input /></td>
+            </tr>
+            <tr>
+                <td><label>Pass:</label></td>
+                <td><input type="password" /></td>
+            </tr>
+            <tr>    
+                <td><label>New Pass:</label></td>
+                <td><input type="password" /></td>
+            </tr>
+            <tr>
+                <td><label>Confirm New Pass:</label></td>
+                <td><input type="password" /></td>
+            </tr>
+        </table>
+        <button id="btEditUser">Modificar</button>
+    </div>
+</div>

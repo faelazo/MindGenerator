@@ -1,0 +1,70 @@
+﻿<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<link href="css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+<link href="css/notificaciones.css" rel="stylesheet" type="text/css" />
+    
+<script language="javascript" type="text/javascript">
+
+    function compTables(){
+
+        var elements = document.getElementById("listNotification").getElementsByTagName('tr');
+        
+        for (i = 0; i < elements.length; i++) {
+
+            if ((i+1) % 2 == 0) {
+                jQuery(elements[i]).css('background', 'white');
+            }
+        }
+    };
+
+    jQuery(document).ready(function () {
+
+        jQuery('#btInfo').button();
+        jQuery('#btInfo').click(function () {
+
+            alert('Cerda');
+        });
+
+        compTables();
+    });
+
+</script>
+
+<div id="notificaciones">
+
+    <div id="title">
+        <label id="lbTitle">Notificaciones</label>
+    </div>
+    <div id="info">
+        <span class="ui-icon ui-icon-info" id="btInfo"></span>
+    </div>
+    <div id="listNotification">
+    
+        <table class="tableNot">
+           <tr>
+                <td class="nomNot"><a href="#">Nombre de proyecto 1</a></td>
+                <td class="verNot"><button class="btVersion">Versiones</button></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+            <tr>
+                <td class="nomNot"><a href="#">Nombre de proyecto 2</a></td>
+                <td class="verNot"><button class="btVersion">Versiones</button></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+            <tr>
+                <td class="nomNot"><a href="#">Nombre de proyecto 3</a></td>
+                <td class="verNot"><button class="btVersion">Versiones</button></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+    </div>
+    
+</div>
+
+<div id="infoDialog" title="Informacion">
+    <p>Ventana Informacion</p>
+</div>

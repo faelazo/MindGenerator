@@ -1,0 +1,105 @@
+﻿<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<link href="css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+<link href="css/versiones.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+
+    function compTables() {
+
+        var elements = document.getElementById("listVersion").getElementsByTagName('tr');
+
+        for (i = 0; i < elements.length; i++) {
+
+            if ((i + 1) % 2 == 0) {
+                jQuery(elements[i]).css('background', 'white');
+            }
+        }
+    };
+
+    jQuery(document).ready(function () {
+
+        jQuery('#btEliminarVersion').button();
+        jQuery('#btInfo').button();
+        jQuery('#btInfo').click(function () {
+
+            alert('Cerda');
+        });
+
+        jQuery('#radio').buttonset();
+
+        jQuery('#radio1').click(function () {
+
+            var elements = document.getElementById("listVersion").getElementsByTagName('input');
+
+            for (i = 0; i < elements.length; i++) {
+
+                jQuery(elements[i]).attr('checked', 'checked');
+            }
+        });
+        jQuery('#radio2').click(function () {
+
+            var elements = document.getElementById("listVersion").getElementsByTagName('input');
+
+            for (i = 0; i < elements.length; i++) {
+
+                elements[i].checked = false;
+            }
+        });
+
+        compTables();
+    });
+
+</script>
+
+<div id="versiones">
+    
+    <div id="title">
+        <label id="lbTitle">Control de Versiones</label>
+    </div>
+    <div id="info">
+        <button id="btInfo"><span class="ui-icon ui-icon-info"></span></button>
+    </div>
+    <div id="radio">
+        <input class="btRadio" type="radio" name="btRadio" id="radio1" /><label for="radio1">Select All</label>
+        <input class="btRadio" type="radio" name="btRadio" id="radio2" checked="checked"/><label for="radio2">Select None</label>
+    </div>
+
+    <div id="listVersion">
+
+        <table class="tableVer">
+            <tr>
+                <td class="nomVersion"><a href="PruebaPanelesTestPage.html" target="_blank">Nombre de la version 1</a></td>
+                <td class="descVersion"><label class="lbAutor">Descripcion detallada de los cambios realizados en esta version del diagrama para entender los cambios generados en esta version sin necesidad de llegar a abrir el diagrama.</label></td>
+                <td class="fecVersion"><label class="lbAutor">23/9/2011 11:03:23</label></td>
+                <td class="autVersion"><label class="lbAutor">faelazomoreno</label></td>
+                <td class="checkVersion"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableVer">
+            <tr>
+                <td class="nomVersion"><a href="PruebaPanelesTestPage.html" target="_blank">Nombre de la version 2</a></td>
+                <td class="descVersion"><label class="lbAutor">Descripcion</label></td>
+                <td class="fecVersion"><label class="lbAutor">Fecha</label></td>
+                <td class="autVersion"><label class="lbAutor">Autor</label></td>
+                <td class="checkVersion"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableVer">
+            <tr>
+                <td class="nomVersion"><a href="PruebaPanelesTestPage.html" target="_blank">Nombre de la version 3</a></td>
+                <td class="descVersion"><label class="lbAutor">Descripcion</label></td>
+                <td class="fecVersion"><label class="lbAutor">Fecha</label></td>
+                <td class="autVersion"><label class="lbAutor">Autor</label></td>
+                <td class="checkVersion"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="menu">
+    
+        <table>
+            <tr><td><button id="btEliminarVersion">Delete Version</button></td></tr>
+        </table>
+    </div>
+</div>
