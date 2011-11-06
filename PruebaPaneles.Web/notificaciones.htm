@@ -14,6 +14,7 @@
             if ((i+1) % 2 == 0) {
                 jQuery(elements[i]).css('background', 'white');
             }
+            jQuery(elements[i]).children().children().first().html(i+1);
         }
     };
 
@@ -35,6 +36,34 @@
         });
 
         jQuery('#btInfo').button();
+        jQuery('#btEliminarNot').button({
+            icons: { primary: 'ui-icon-closethick' }
+        });
+        jQuery('#btEnviarNot').button({
+            icons: {primary: 'ui-icon-transferthick-e-w'}
+        });
+
+        jQuery('#radio').buttonset();
+
+        jQuery('#radio1').click(function () {
+
+            var elements = document.getElementById("listNotification").getElementsByTagName('input');
+
+            for (i = 0; i < elements.length; i++) {
+
+                jQuery(elements[i]).attr('checked', 'checked');
+            }
+        });
+        jQuery('#radio2').click(function () {
+
+            var elements = document.getElementById("listNotification").getElementsByTagName('input');
+
+            for (i = 0; i < elements.length; i++) {
+
+                elements[i].checked = false;
+            }
+        });
+
         jQuery('#btInfo').click(function () {
 
             jQuery('#infoDialog').dialog("open");
@@ -53,34 +82,192 @@
     <div id="info">
         <span class="ui-icon ui-icon-info" id="btInfo"></span>
     </div>
+    <div id="radio">
+        <input class="btRadio" type="radio" name="btRadio" id="radio1" /><label for="radio1">Select All</label>
+        <input class="btRadio" type="radio" name="btRadio" id="radio2" checked="checked"/><label for="radio2">Select None</label>
+    </div>
     <div id="listNotification">
     
         <table class="tableNot">
            <tr>
-                <td class="nomNot"><a href="#">Nombre de proyecto 1</a></td>
-                <td class="verNot"><button class="btVersion">Versiones</button></td>
+                <td class="numNot"><label id="lbNumNot"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="lbAutNot">Autor</label></td>
+                <td class="fecNot"><label id="lbFecNot">Fecha</label></td>
                 <td class="checkNot"><input class="check" type="checkbox" /></td>
             </tr>
         </table>
         <table class="tableNot">
-            <tr>
-                <td class="nomNot"><a href="#">Nombre de proyecto 2</a></td>
-                <td class="verNot"><button class="btVersion">Versiones</button></td>
+           <tr>
+                <td class="numNot"><label id="Label1"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label2">Autor</label></td>
+                <td class="fecNot"><label id="Label3">Fecha</label></td>
                 <td class="checkNot"><input class="check" type="checkbox" /></td>
             </tr>
         </table>
         <table class="tableNot">
-            <tr>
-                <td class="nomNot"><a href="#">Nombre de proyecto 3</a></td>
-                <td class="verNot"><button class="btVersion">Versiones</button></td>
+           <tr>
+                <td class="numNot"><label id="Label4"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label5">Autor</label></td>
+                <td class="fecNot"><label id="Label6">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label7"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label8">Autor</label></td>
+                <td class="fecNot"><label id="Label9">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label10"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label11">Autor</label></td>
+                <td class="fecNot"><label id="Label12">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label13"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label14">Autor</label></td>
+                <td class="fecNot"><label id="Label15">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label16"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label17">Autor</label></td>
+                <td class="fecNot"><label id="Label18">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label19"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label20">Autor</label></td>
+                <td class="fecNot"><label id="Label21">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label22"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label23">Autor</label></td>
+                <td class="fecNot"><label id="Label24">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label25"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label26">Autor</label></td>
+                <td class="fecNot"><label id="Label27">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label28"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label29">Autor</label></td>
+                <td class="fecNot"><label id="Label30">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label31"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label32">Autor</label></td>
+                <td class="fecNot"><label id="Label33">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label34"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label35">Autor</label></td>
+                <td class="fecNot"><label id="Label36">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label37"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label38">Autor</label></td>
+                <td class="fecNot"><label id="Label39">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label40"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label41">Autor</label></td>
+                <td class="fecNot"><label id="Label42">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label43"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label44">Autor</label></td>
+                <td class="fecNot"><label id="Label45">Fecha</label></td>
+                <td class="checkNot"><input class="check" type="checkbox" /></td>
+            </tr>
+        </table>
+        <table class="tableNot">
+           <tr>
+                <td class="numNot"><label id="Label46"></label></td>
+                <td class="nomNot"><a href="#">Asunto de Notificacion</a></td>
+                <td class="autNot"><label id="Label47">Autor</label></td>
+                <td class="fecNot"><label id="Label48">Fecha</label></td>
                 <td class="checkNot"><input class="check" type="checkbox" /></td>
             </tr>
         </table>
     </div>
+
+    <div id="vistaNotificacion">
+        
+        <div id="buttons">
+            <button id="btEliminarNot">Eliminar</button>
+            <button id="btEnviarNot">Enviar</button>
+        </div>
+        <div id="nuevaNotificacion">
+            <div id="tituloNot">
+                <table>
+                    <tr><td><label>Asunto:</label><select style="float:right">Destinatario</select></td></tr>
+                    <tr><td><input /></td></tr>
+                </table>
+            </div>
+            <div id="msgNot">
+                <table>
+                    <tr><td><label>Mensaje:</label></td></tr>
+                    <tr><td><textarea></textarea></td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
     
 </div>
 
-<div id="infoDialog" title="Informacion">
+<div id="infoDialog" title="Información">
     <p style="text-align:justify">Muestra el listado de notificaiones que contiene el usuario.</p>
     <p style="text-align:justify">Las notificaciones podrán ser recibidas por el sistema debido a una modificación realizada sobre algún proyecto o por algún usuario conectado para enviarle algún mensaje.</p>
     <p style="text-align:justify">Además permite eliminar una o varias notificaciones y crear una nueva notificación para enviar a un usuario conectado.</p>

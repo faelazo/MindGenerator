@@ -33,14 +33,43 @@
     border: none;
 }
 
+#radio
+{
+    float: right;
+    margin-right: 53%;
+}
+
+span.ui-button-text
+{
+    font-size: 0.6em;
+}
+
+#buttons
+{
+    position:relative;
+    float: left;
+    margin-bottom: 7px;
+}
+
+#buttons button
+{
+    width:100px;
+    height:30px;
+}
+
+#btEnviarNot
+{
+    margin-left:100px;
+}
+
 #listNotification
 {
     position: relative;
     float: left;
     top: 5px;
     left: 0px;
-    width: 80%;
-    height: 90%;
+    width: 50%;
+    height: 80%;
     overflow-y:auto;
     overflow-x:hidden;
 }
@@ -60,6 +89,16 @@ table.tableNot
     background: #dedede;
 }
 
+.tableNot td
+{
+    text-align: center;
+}
+
+td.numNot
+{
+    width:4%;
+}
+
 td.nomNot
 {
     padding-left: 40px;
@@ -68,4 +107,35 @@ td.nomNot
 td.checkNot
 {
     text-align: center;
+}
+
+#vistaNotificacion
+{
+    width: 40%;
+    height: 300px;
+    position: relative;
+    float: right;
+    margin-top: -25px;
+}
+
+#nuevaNotificacion
+{
+    position:relative;
+    float:left;
+    border: 1px solid #8d26c0;
+}
+
+#tituloNot table, #tituloNot input
+{
+    width:100%;
+}
+
+#msgNot table, #msgNot textarea
+{
+    width:100%;
+}
+
+#msgNot textarea
+{
+    height: 200px;
 }
