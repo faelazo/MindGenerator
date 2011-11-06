@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientBin\PruebaPaneles.xap" />
+    <Content Include="css\images\chrome.png" />
+    <Content Include="css\images\firefox.png" />
     <Content Include="css\images\imageLogo.png" />
     <Content Include="css\images\mainLogo.png" />
     <Content Include="css\jquery-ui-1.8.16.custom.css" />
@@ -71,8 +73,12 @@
     <Content Include="css\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="css\images\ui-icons_ffffff_256x240.png" />
     <Content Include="css\images\nombreLogo.png" />
+    <Content Include="css\notificaciones.css" />
     <Content Include="css\perfil.css" />
+    <Content Include="css\perfilUsuario.css" />
+    <Content Include="css\plantillas.css" />
     <Content Include="css\proyectos.css" />
+    <Content Include="css\versiones.css" />
     <Content Include="js\jquery-1.6.2.min.js" />
     <Content Include="js\jquery-ui-1.8.16.custom.min.js" />
     <Content Include="js\ui\jquery-ui-1.8.16.custom.js" />
@@ -108,11 +114,15 @@
     <Content Include="js\ui\jquery.ui.tabs.js" />
     <Content Include="js\ui\jquery.ui.widget.js" />
     <Content Include="login.htm" />
+    <Content Include="notificaciones.htm" />
     <Content Include="perfil.htm" />
+    <Content Include="perfilusuario.htm" />
+    <Content Include="plantillas.htm" />
     <Content Include="proyectos.htm" />
     <Content Include="PruebaPanelesTestPage.aspx" />
     <Content Include="PruebaPanelesTestPage.html" />
     <Content Include="js\Silverlight.js" />
+    <Content Include="versiones.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

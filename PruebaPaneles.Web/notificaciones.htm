@@ -19,10 +19,25 @@
 
     jQuery(document).ready(function () {
 
+        jQuery('#infoDialog').dialog({
+            width: 400,
+            autoOpen: false,
+            resizable: false,
+            position: ['right', 'top'],
+            show: 'slide',
+            hide: 'slide',
+            buttons: {
+                Ok: function () {
+
+                    jQuery(this).dialog("close");
+                }
+            }
+        });
+
         jQuery('#btInfo').button();
         jQuery('#btInfo').click(function () {
 
-            alert('Cerda');
+            jQuery('#infoDialog').dialog("open");
         });
 
         compTables();
@@ -66,5 +81,7 @@
 </div>
 
 <div id="infoDialog" title="Informacion">
-    <p>Ventana Informacion</p>
+    <p style="text-align:justify">Muestra el listado de notificaiones que contiene el usuario.</p>
+    <p style="text-align:justify">Las notificaciones podrán ser recibidas por el sistema debido a una modificación realizada sobre algún proyecto o por algún usuario conectado para enviarle algún mensaje.</p>
+    <p style="text-align:justify">Además permite eliminar una o varias notificaciones y crear una nueva notificación para enviar a un usuario conectado.</p>
 </div>

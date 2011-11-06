@@ -6,11 +6,26 @@
 
     jQuery(document).ready(function () {
 
+        jQuery('#infoDialog').dialog({
+            width: 300,
+            autoOpen: false,
+            resizable: false,
+            position: ['right', 'top'],
+            show: 'slide',
+            hide: 'slide',
+            buttons: {
+                Ok: function () {
+
+                    jQuery(this).dialog("close");
+                }
+            }
+        });
+
         jQuery('#btEditUser').button();
         jQuery('#btInfo').button();
         jQuery('#btInfo').click(function () {
 
-            alert('Cerda');
+            jQuery('#infoDialog').dialog("open");
         });
     });
 </script>
@@ -44,4 +59,9 @@
         </table>
         <button id="btEditUser">Modificar</button>
     </div>
+</div>
+
+<div id="infoDialog" title="Informacion">
+    <p style="text-align:justify">Muestra los datos del Usuario.</p>
+    <p style="text-align:justify">Permite modificar el nombre de usuario así como su contraseña.</p>
 </div>

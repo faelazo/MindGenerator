@@ -35,12 +35,23 @@
             }
         });
 
+        jQuery('#infoDialog').dialog({
+            width: 300,
+            autoOpen: false,
+            resizable: false,
+            position: ['right', 'top'],
+            show: 'slide',
+            hide: 'slide',
+            buttons: {
+                Ok: function () {
+
+                    jQuery(this).dialog("close");
+                }
+            }
+        });
+
         jQuery('.btVersion').button();
         jQuery('#btInfo').button();
-        jQuery('#btInfo').click(function () {
-
-            alert('Cerda');
-        });
         jQuery('#btNuevoProy').button();
         jQuery('#btEditarProy').button();
         jQuery('#btEliminarProy').button();
@@ -98,6 +109,11 @@
 
                 jQuery('#nuevoProy').dialog("open");
             }
+        });
+
+        jQuery('#btInfo').click(function () {
+
+            jQuery('#infoDialog').dialog("open");
         });
     });
 
@@ -164,4 +180,9 @@
     
     <label>Introduzca el nombre del proyecto:</label>
     <input type="text" style="width:100%;" id="ipNombreProy" />
+</div>
+
+<div id="infoDialog" title="Informacion">
+    <p style="text-align:justify">Muestra un listado con todos los proyectos creados por el usuario y aquellos en los que está participando.</p>
+    <p style="text-align:justify">Además permite crear un nuevo proyecto en blanco, eliminar uno o varios y editar el nombre de uno existente.</p>
 </div>

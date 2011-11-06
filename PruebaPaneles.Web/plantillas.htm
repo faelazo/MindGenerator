@@ -7,10 +7,25 @@
 
     jQuery(document).ready(function () {
 
+        jQuery('#infoDialog').dialog({
+            width: 300,
+            autoOpen: false,
+            resizable: false,
+            position: ['right', 'top'],
+            show: 'slide',
+            hide: 'slide',
+            buttons: {
+                Ok: function () {
+
+                    jQuery(this).dialog("close");
+                }
+            }
+        });
+
         jQuery('#btInfo').button();
         jQuery('#btInfo').click(function () {
 
-            alert('Cerda');
+            jQuery('#infoDialog').dialog("open");
         });
     });
 
@@ -24,4 +39,8 @@
     <div id="info">
         <button id="btInfo"><span class="ui-icon ui-icon-info"></span></button>
     </div>
+</div>
+
+<div id="infoDialog" title="Informacion">
+    <p style="text-align:justify">Muestra un listado de plantillas existentes para generar un nuevo proyecto con la estructura seleccionada.</p>
 </div>

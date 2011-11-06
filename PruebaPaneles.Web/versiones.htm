@@ -19,13 +19,24 @@
 
     jQuery(document).ready(function () {
 
-        jQuery('#btEliminarVersion').button();
-        jQuery('#btInfo').button();
-        jQuery('#btInfo').click(function () {
+        jQuery('#infoDialog').dialog({
+            width: 300,
+            autoOpen: false,
+            resizable: false,
+            position: ['right', 'top'],
+            show: 'slide',
+            hide: 'slide',
+            buttons: {
+                Ok: function () {
 
-            alert('Cerda');
+                    jQuery(this).dialog("close");
+                }
+            }
         });
 
+        jQuery('#btEliminarVersion').button();
+        jQuery('#btInfo').button();
+        
         jQuery('#radio').buttonset();
 
         jQuery('#radio1').click(function () {
@@ -45,6 +56,11 @@
 
                 elements[i].checked = false;
             }
+        });
+
+        jQuery('#btInfo').click(function () {
+
+            jQuery('#infoDialog').dialog("open");
         });
 
         compTables();
@@ -102,4 +118,9 @@
             <tr><td><button id="btEliminarVersion">Delete Version</button></td></tr>
         </table>
     </div>
+</div>
+
+<div id="infoDialog" title="Informacion">
+    <p style="text-align:justify">Muestra todas las veriones existentes del proyecto pulsado sobre el botón <i>Versiones</i> en la pestaña <i>Proyectos</i>.</p>
+    <p style="text-align:justify">Permite eliminar una o varias versiones y acceder a cualquiera pulsando sobre el nombre.</p>
 </div>
