@@ -67,6 +67,25 @@ span.ui-button-text
     margin-top:-15px;
 }
 
+#aceptReset
+{
+    
+    height: 40px;
+    width: 100%;
+    position: relative;
+    float: left;
+}
+
+#btOlvidar
+{
+    
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: right;
+    padding-top: 3%;
+}
+
 #errorMessage
 {
     font-size: 18px;

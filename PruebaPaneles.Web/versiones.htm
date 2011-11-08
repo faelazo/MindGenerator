@@ -14,6 +14,7 @@
             if ((i + 1) % 2 == 0) {
                 jQuery(elements[i]).css('background', 'white');
             }
+            jQuery(elements[i]).children().children().first().html(i + 1);
         }
     };
 
@@ -85,6 +86,7 @@
 
         <table class="tableVer">
             <tr>
+                <td class="numVer"><label id="lbNumNot"></label></td>
                 <td class="nomVersion"><a href="PruebaPanelesTestPage.html" target="_blank">Nombre de la version 1</a></td>
                 <td class="descVersion"><label class="lbAutor">Descripcion detallada de los cambios realizados en esta version del diagrama para entender los cambios generados en esta version sin necesidad de llegar a abrir el diagrama.</label></td>
                 <td class="fecVersion"><label class="lbAutor">23/9/2011 11:03:23</label></td>
@@ -94,19 +96,21 @@
         </table>
         <table class="tableVer">
             <tr>
-                <td class="nomVersion"><a href="PruebaPanelesTestPage.html" target="_blank">Nombre de la version 2</a></td>
-                <td class="descVersion"><label class="lbAutor">Descripcion</label></td>
-                <td class="fecVersion"><label class="lbAutor">Fecha</label></td>
-                <td class="autVersion"><label class="lbAutor">Autor</label></td>
+                <td class="numVer"><label id="Label1"></label></td>
+                <td class="nomVersion"><a href="PruebaPanelesTestPage.html" target="_blank">Nombre de la version 1</a></td>
+                <td class="descVersion"><label class="lbAutor">Descripcion detallada de los cambios realizados en esta version del diagrama para entender los cambios generados en esta version sin necesidad de llegar a abrir el diagrama.</label></td>
+                <td class="fecVersion"><label class="lbAutor">23/9/2011 11:03:23</label></td>
+                <td class="autVersion"><label class="lbAutor">faelazomoreno</label></td>
                 <td class="checkVersion"><input class="check" type="checkbox" /></td>
             </tr>
         </table>
         <table class="tableVer">
             <tr>
-                <td class="nomVersion"><a href="PruebaPanelesTestPage.html" target="_blank">Nombre de la version 3</a></td>
-                <td class="descVersion"><label class="lbAutor">Descripcion</label></td>
-                <td class="fecVersion"><label class="lbAutor">Fecha</label></td>
-                <td class="autVersion"><label class="lbAutor">Autor</label></td>
+                <td class="numVer"><label id="Label2"></label></td>
+                <td class="nomVersion"><a href="PruebaPanelesTestPage.html" target="_blank">Nombre de la version 1</a></td>
+                <td class="descVersion"><label class="lbAutor">Descripcion detallada de los cambios realizados en esta version del diagrama para entender los cambios generados en esta version sin necesidad de llegar a abrir el diagrama.</label></td>
+                <td class="fecVersion"><label class="lbAutor">23/9/2011 11:03:23</label></td>
+                <td class="autVersion"><label class="lbAutor">faelazomoreno</label></td>
                 <td class="checkVersion"><input class="check" type="checkbox" /></td>
             </tr>
         </table>
@@ -116,6 +120,7 @@
     
         <table>
             <tr><td><button id="btEliminarVersion">Delete Version</button></td></tr>
+            <tr><td><select ></select></td></tr>
         </table>
     </div>
 </div>

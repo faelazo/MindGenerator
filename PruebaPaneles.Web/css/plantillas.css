@@ -32,3 +32,55 @@
     background: transparent;
     border: none;
 }
+
+#gridPlantillas
+{
+    margin-top:20px;
+    position:relative;
+    float:left;
+    width:73%;
+    height:88%;
+    overflow-x:auto;
+    overflow-y:auto;
+}
+
+.tablePlantillas
+{
+    position:relative;
+    float:left;
+    padding-left:20px;
+    padding-bottom:20px;
+}
+
+.celPlantilla
+{
+    text-align:center;
+}
+
+.imgPlantilla
+{
+    background:#dedede;
+    width:200px;
+    height:200px;
+}
+
+#menu
+{
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
+#menu button
+{
+    width: 130px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+span.ui-button-text
+{
+    font-size: 0.6em;
+}

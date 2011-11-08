@@ -94,6 +94,12 @@ td.autorProyecto
     text-align: center;
 }
 
+td.fecProyecto
+{
+    width: 150px;
+    text-align: center;
+}
+
 #menu
 {
     position: relative;

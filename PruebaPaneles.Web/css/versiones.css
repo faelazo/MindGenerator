@@ -83,6 +83,11 @@ table.tableVer
     padding:1%;
 }
 
+td.numVer
+{
+    width:4%;
+}
+
 td.nomVersion
 {
     width: 20%;
@@ -90,7 +95,7 @@ td.nomVersion
 
 td.descVersion
 {
-    width: 45%;
+    width: 41%;
     text-align: justify !important;
 }
 

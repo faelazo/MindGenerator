@@ -81,6 +81,7 @@
     <Content Include="css\versiones.css" />
     <Content Include="js\jquery-1.6.2.min.js" />
     <Content Include="js\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="js\prueba.js" />
     <Content Include="js\ui\jquery-ui-1.8.16.custom.js" />
     <Content Include="js\ui\jquery.effects.blind.js" />
     <Content Include="js\ui\jquery.effects.bounce.js" />
