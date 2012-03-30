@@ -143,7 +143,7 @@
                             <Button Margin="8,8,110,0" VerticalAlignment="Top" Width="30" Height="30" Name="btTexto" ToolTipService.ToolTip="Texto" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
         						<Image Source="Images/texto.png" Stretch="Fill" Width="25" Height="25"/>
         					</Button>
-                            <Button Margin="42,8,76,0" VerticalAlignment="Top" Width="30" Height="30" Name="btColores" ToolTipService.ToolTip="Colores" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
+                            <Button Margin="42,8,76,0" VerticalAlignment="Top" Width="30" Height="30" Name="btColores" ToolTipService.ToolTip="Colores" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Click="btColores_Click">
         						<Image Source="Images/colores.png" Stretch="Fill" Width="25" Height="25"/>
         					</Button>
                             <Button Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Height="30" Margin="76,8,42,0" Name="btGrosor" ToolTipService.ToolTip="Grosor" VerticalAlignment="Top" Width="30" Click="btGrosor_Click">

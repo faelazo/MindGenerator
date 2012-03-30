@@ -636,5 +636,11 @@ namespace PruebaPaneles
             Components.WindowThickness winGrosor = new Components.WindowThickness();
             winGrosor.Show();
         }
+
+        private void btColores_Click(object sender, RoutedEventArgs e)
+        {
+            Components.WindowColor wc = new Components.WindowColor();
+            wc.Show();
+        }
     }
 }

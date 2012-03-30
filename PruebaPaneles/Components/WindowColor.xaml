@@ -1,31 +1,31 @@
-﻿<controls:ChildWindow x:Class="PruebaPaneles.Components.ChildWindow1"
+﻿<controls:ChildWindow x:Class="PruebaPaneles.Components.WindowColor"
            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
            xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
-           Width="205" Height="180" 
-           Title="ChildWindow1">
+           Width="207" Height="185" 
+           Title="WindowColor">
     <Grid x:Name="LayoutRoot" Margin="2">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="CancelButton" Content="Cancelar" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
-        <Button x:Name="OKButton" Content="Aceptar" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
-        <Rectangle Fill="#FFFDFDFF" HorizontalAlignment="Left" Height="30" Margin="8,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r1"/>
-        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="30" Margin="42,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r2" />
-        <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="30" Margin="76,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r3" />
-        <Rectangle Fill="#FF0FE80F" Height="30" Margin="110,8,43,0" Stroke="Black" VerticalAlignment="Top" Name="r4" />
-        <Rectangle Fill="Blue" HorizontalAlignment="Left" Height="30" Margin="144,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r5" />
-        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="30" Margin="8,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r6" />
-        <Rectangle Fill="Orange" HorizontalAlignment="Left" Height="30" Margin="42,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r7" />
-        <Rectangle Fill="Pink" HorizontalAlignment="Left" Height="30" Margin="76,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r8" />
-        <Rectangle Fill="Violet" HorizontalAlignment="Left" Height="30" Margin="110,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r9" />
-        <Rectangle Fill="Aqua" HorizontalAlignment="Left" Height="30" Margin="144,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r10" />
-        <Rectangle Fill="#FFABABAD" HorizontalAlignment="Left" Height="30" Margin="8,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r11" />
-        <Rectangle Fill="Brown" HorizontalAlignment="Left" Height="30" Margin="42,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r12" />
-        <Rectangle Fill="Purple" HorizontalAlignment="Left" Height="30" Margin="76,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r13" />
-        <Rectangle Fill="Beige" HorizontalAlignment="Left" Height="30" Margin="110,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r14" />
-        <Rectangle Fill="Gold" HorizontalAlignment="Left" Height="30" Margin="144,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r15" />
+        <Button x:Name="CancelButton" Content="Cancelar" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1"/>
+        <Button x:Name="OKButton" Content="Aceptar" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1"/>
+        <Rectangle Fill="#FFFDFDFF" HorizontalAlignment="Left" Height="30" Margin="8,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r1" ToolTipService.ToolTip="Blanco" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="30" Margin="42,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r2" ToolTipService.ToolTip="Rojo" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Yellow" HorizontalAlignment="Left" Height="30" Margin="76,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r3" ToolTipService.ToolTip="Amarillo" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="#FF0FE80F" HorizontalAlignment="Left" Height="30" Margin="110,8,43,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r4"  ToolTipService.ToolTip="Verde" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Blue" HorizontalAlignment="Left" Height="30" Margin="144,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r5"  ToolTipService.ToolTip="Azul" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="30" Margin="8,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r6"  ToolTipService.ToolTip="Negro" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Orange" HorizontalAlignment="Left" Height="30" Margin="42,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r7"  ToolTipService.ToolTip="Naranja" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Pink" HorizontalAlignment="Left" Height="30" Margin="76,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r8"  ToolTipService.ToolTip="Rosa" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Violet" HorizontalAlignment="Left" Height="30" Margin="110,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r9"  ToolTipService.ToolTip="Violeta" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Aqua" HorizontalAlignment="Left" Height="30" Margin="144,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r10"  ToolTipService.ToolTip="Celeste" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="#FFABABAD" HorizontalAlignment="Left" Height="30" Margin="8,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r11"  ToolTipService.ToolTip="Gris" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Brown" HorizontalAlignment="Left" Height="30" Margin="42,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r12"  ToolTipService.ToolTip="Marrón" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Purple" HorizontalAlignment="Left" Height="30" Margin="76,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r13"  ToolTipService.ToolTip="Morado" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Beige" HorizontalAlignment="Left" Height="30" Margin="110,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r14"  ToolTipService.ToolTip="Beige" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
+        <Rectangle Fill="Gold" HorizontalAlignment="Left" Height="30" Margin="144,76,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Name="r15"  ToolTipService.ToolTip="Dorado" MouseEnter="r_MouseEnter" MouseLeave="r_MouseLeave" MouseLeftButtonDown="r_MouseLeftButtonDown" />
     </Grid>
 </controls:ChildWindow>

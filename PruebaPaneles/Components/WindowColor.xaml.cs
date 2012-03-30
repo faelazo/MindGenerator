@@ -12,11 +12,17 @@ using System.Windows.Shapes;
 
 namespace PruebaPaneles.Components
 {
-    public partial class ChildWindow1 : ChildWindow
+    public partial class WindowColor : ChildWindow
     {
-        public ChildWindow1()
+        public Rectangle rectSelect;
+
+        public WindowColor()
         {
             InitializeComponent();
+
+            this.rectSelect = r1;
+            this.rectSelect.StrokeThickness = Configuration.STROKE_THICKNESS_SELECT;
+            this.rectSelect.Stroke = Configuration.COLOR_SELECT;
         }
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
@@ -27,6 +33,43 @@ namespace PruebaPaneles.Components
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
+        }
+
+        private void r_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Rectangle r = sender as Rectangle;
+            
+            if (!r.Stroke.Equals(Configuration.COLOR_SELECT))
+            {
+                r.Stroke = Configuration.COLOR_MOUSEOVER;
+                r.StrokeThickness = Configuration.STROKE_THICKNESS_SELECT;
+            }
+        }
+
+        private void r_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Rectangle r = sender as Rectangle;
+
+            if (!r.Stroke.Equals(Configuration.COLOR_SELECT))
+            {
+                r.Stroke = Configuration.COLOR_NORMAL;
+                r.StrokeThickness = Configuration.STROKE_THICKNESS_NORMAL;
+            }
+        }
+
+        private void r_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Rectangle r = sender as Rectangle;
+
+            if (!r.Stroke.Equals(Configuration.COLOR_SELECT))
+            {
+                r.Stroke = Configuration.COLOR_SELECT;
+                r.StrokeThickness = Configuration.STROKE_THICKNESS_SELECT;
+
+                this.rectSelect.Stroke = Configuration.COLOR_NORMAL;
+                this.rectSelect.StrokeThickness = Configuration.STROKE_THICKNESS_NORMAL;
+                this.rectSelect = r;
+            }
         }
     }
 }
