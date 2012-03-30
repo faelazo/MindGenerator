@@ -12,13 +12,13 @@
 
             if('\v'=='v'){
 
-                alert("Se ha detectado que utiliza el navegador "+navigator.appName+". Esta Web está optimizada para los navegadores Google Chrome y Mozilla Firefox."+'\n'+"No aseguramos que todo funcione correctamente si no utiliza uno de los navegadores recomendados. Puede encontrar la web de descarga pinchando sobre los iconos en la pagina principal.");
+                alert("Se ha detectado que utiliza el navegador "+navigator.appName+". Esta Web está optimizada para los navegadores Google Chrome y Mozilla Firefox."+'\n'+"No aseguramos que todo funcione correctamente si no utiliza uno de los navegadores recomendados. Puede encontrar la web de descarga pinchando sobre los iconos en la página principal.");
             }
         };
 
         jQuery(document).ready(function () {
 
-            jQuery('#login').dialog({ modal: true, resizable: false, width: 300, autoOpen: false });
+            jQuery('#login').dialog({ modal: true, resizable: false, autoOpen: false, width: 340 });
             jQuery('#register').dialog({ modal: true, resizable: false, width: 420, autoOpen: false });
             jQuery('#about').dialog({ resizable: false, width: 420, autoOpen: false, show: 'slide', hide: 'slide', position: ['right', 'top'] });
             jQuery('#errorMessage').dialog({
@@ -78,7 +78,7 @@
             });
             jQuery('#btAccept').click(function () { 
                 
-                <!-- Comprobar Login-->
+                <!-- Comprobar Login -->
                 if(jQuery('#ipUserLogin').get(0).value == ""){
                     
                     jQuery('#msg').text("User is empty");
@@ -151,7 +151,7 @@
                 <td><input id="ipPassLogin" type="password" /></td>
             </tr>
         </table>
-        <div id="aceptReset">
+        <div id="acceptReset">
             <button class="btLogin" id="btAccept">Accept</button>
             <button class="btLogin" id="btReset">Reset</button>
         </div>

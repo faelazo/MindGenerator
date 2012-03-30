@@ -156,3 +156,5 @@ C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPanel
 C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoPentagono.g.i.cs
 C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoNube.g.i.cs
 C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoNota.g.i.cs
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\Components\WindowThickness.g.i.cs
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\Components\WindowMessage.g.i.cs

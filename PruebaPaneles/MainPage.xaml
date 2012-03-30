@@ -22,8 +22,8 @@
                             <Button Margin="8,0,110,8" VerticalAlignment="Bottom" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Nube" Name="btNube" Cursor="Hand" Click="btNube_Click">
                             	<Image Height="25" Source="Images/nube.png" Stretch="Fill" Width="25"/>
                             </Button>
-                            <Button Margin="42,0,76,8" VerticalAlignment="Bottom" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Línea" Name="btLinea" Cursor="Hand">
-                            	<Image Height="25" Source="Images/linea.png" Stretch="Fill" Width="25"/>
+                            <Button Margin="42,0,76,8" VerticalAlignment="Bottom" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Línea" Name="btLinea" Cursor="Hand" Click="btLinea_Click">
+                            	<Image Height="25" Source="Images/linea.png" Stretch="Fill" Width="25" GotFocus="btLinea_Click" />
                             </Button>
                             <Button Margin="110,0,8,8" VerticalAlignment="Bottom" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" ToolTipService.ToolTip="Nota" Name="btChincheta" Cursor="Hand" Click="btChincheta_Click">
                             	<Image Height="25" Source="Images/chincheta.png" Stretch="Fill" Width="25"/>
@@ -146,6 +146,9 @@
                             <Button Margin="42,8,76,0" VerticalAlignment="Top" Width="30" Height="30" Name="btColores" ToolTipService.ToolTip="Colores" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
         						<Image Source="Images/colores.png" Stretch="Fill" Width="25" Height="25"/>
         					</Button>
+                            <Button Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Height="30" Margin="76,8,42,0" Name="btGrosor" ToolTipService.ToolTip="Grosor" VerticalAlignment="Top" Width="30" Click="btGrosor_Click">
+                                <Image Height="25" Source="/PruebaPaneles;component/Images/linea.png" Stretch="Fill" Width="25" />
+                            </Button>
                         </Grid>
         			</StackPanel>
         		</Border>

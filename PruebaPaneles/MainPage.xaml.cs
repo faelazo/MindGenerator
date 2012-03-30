@@ -17,8 +17,11 @@ namespace PruebaPaneles
         private Boolean enMovimiento;
         private Double posVertical;
         private Double posHorizontal;
-        private int foco;
-        private String tipoFoco;
+        public int foco;
+        public String tipoFoco;
+
+        public Boolean createLine;
+        public Line linea;
 
         public MainPage()
         {
@@ -26,102 +29,144 @@ namespace PruebaPaneles
 
             foco = -1;
             tipoFoco = "";
+            createLine = false;
+        }
+
+        public void setFoco(object f, String t)
+        {
+            switch (t)
+            {
+                case Configuration.CUADRADO:
+                    View.NodoCuadrado nodoCua = f as View.NodoCuadrado;
+                    this.foco = this.cvDiagram.Children.IndexOf(nodoCua);
+                    break;
+                case Configuration.CIRCULO:
+                    View.NodoCirculo nodoCir = f as View.NodoCirculo;
+                    this.foco = this.cvDiagram.Children.IndexOf(nodoCir);
+                    break;
+                case Configuration.TRIANGULO:
+                    View.NodoTriangulo nodoTri = f as View.NodoTriangulo;
+                    this.foco = this.cvDiagram.Children.IndexOf(nodoTri);
+                    break;
+                case Configuration.PENTAGONO:
+                    View.NodoPentagono nodoPen = f as View.NodoPentagono;
+                    this.foco = this.cvDiagram.Children.IndexOf(nodoPen);
+                    break;
+                case Configuration.NUBE:
+                    View.NodoNube nodoNub = f as View.NodoNube;
+                    this.foco = this.cvDiagram.Children.IndexOf(nodoNub);
+                    break;
+                case Configuration.NOTA:
+                    View.NodoNota nodoNot = f as View.NodoNota;
+                    this.foco = this.cvDiagram.Children.IndexOf(nodoNot);
+                    break;
+            }
+            this.tipoFoco = t;
         }
 
         private void btCuadrado_Click(object sender, RoutedEventArgs e)
         {
-            View.NodoCuadrado nodo = new View.NodoCuadrado();
+            View.NodoCuadrado nodo = new View.NodoCuadrado(this);
             nodo.MouseLeftButtonDown += new MouseButtonEventHandler(this.cuadrado_MouseLeftButtonDown);
             nodo.MouseLeftButtonUp += new MouseButtonEventHandler(this.cuadrado_MouseLeftButtonUp);
             nodo.MouseMove += new MouseEventHandler(this.cuadrado_MouseMove);
 
             cvDiagram.Children.Add(nodo);
+            nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
+            nodo.setFocus();
+            nodo.setPos();
         }
 
         private void btCirculo_Click(object sender, RoutedEventArgs e)
         {
-            View.NodoCirculo nodo = new View.NodoCirculo();
+            View.NodoCirculo nodo = new View.NodoCirculo(this);
             nodo.MouseLeftButtonDown += new MouseButtonEventHandler(this.circulo_MouseLeftButtonDown);
             nodo.MouseLeftButtonUp += new MouseButtonEventHandler(this.circulo_MouseLeftButtonUp);
             nodo.MouseMove += new MouseEventHandler(this.circulo_MouseMove);
 
             cvDiagram.Children.Add(nodo);
+            nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
+            nodo.setFocus();
+            nodo.setPos();
         }
 
         private void btTriangulo_Click(object sender, RoutedEventArgs e)
         {
-            View.NodoTriangulo nodo = new View.NodoTriangulo();
+            View.NodoTriangulo nodo = new View.NodoTriangulo(this);
             nodo.MouseLeftButtonDown += new MouseButtonEventHandler(this.triangulo_MouseLeftButtonDown);
             nodo.MouseLeftButtonUp += new MouseButtonEventHandler(this.triangulo_MouseLeftButtonUp);
             nodo.MouseMove += new MouseEventHandler(this.triangulo_MouseMove);
 
             cvDiagram.Children.Add(nodo);
+            nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
+            nodo.setFocus();
+            nodo.setPos();
         }
 
         private void btPentagono_Click(object sender, RoutedEventArgs e)
         {
-            View.NodoPentagono nodo = new View.NodoPentagono();
+            View.NodoPentagono nodo = new View.NodoPentagono(this);
             nodo.MouseLeftButtonDown += new MouseButtonEventHandler(this.pentagono_MouseLeftButtonDown);
             nodo.MouseLeftButtonUp += new MouseButtonEventHandler(this.pentagono_MouseLeftButtonUp);
             nodo.MouseMove += new MouseEventHandler(this.pentagono_MouseMove);
 
             cvDiagram.Children.Add(nodo);
+            nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
+            nodo.setFocus();
+            nodo.setPos();
         }
 
         private void btNube_Click(object sender, RoutedEventArgs e)
         {
-            View.NodoNube nodo = new View.NodoNube();
+            View.NodoNube nodo = new View.NodoNube(this);
             nodo.MouseLeftButtonDown += new MouseButtonEventHandler(this.nube_MouseLeftButtonDown);
             nodo.MouseLeftButtonUp += new MouseButtonEventHandler(this.nube_MouseLeftButtonUp);
             nodo.MouseMove += new MouseEventHandler(this.nube_MouseMove);
 
             cvDiagram.Children.Add(nodo);
+            nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
+            nodo.setFocus();
+            nodo.setPos();
         }
 
         private void btChincheta_Click(object sender, RoutedEventArgs e)
         {
-            View.NodoNota nodo = new View.NodoNota();
+            View.NodoNota nodo = new View.NodoNota(this);
             nodo.MouseLeftButtonDown += new MouseButtonEventHandler(this.nota_MouseLeftButtonDown);
             nodo.MouseLeftButtonUp += new MouseButtonEventHandler(this.nota_MouseLeftButtonUp);
             nodo.MouseMove += new MouseEventHandler(this.nota_MouseMove);
 
             cvDiagram.Children.Add(nodo);
+            nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
+            nodo.setFocus();
+            nodo.setPos();
         }
 
         private void cuadrado_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             View.NodoCuadrado item = sender as View.NodoCuadrado;
-            item.rectangle1.SetValue(Ellipse.FillProperty, new SolidColorBrush(Colors.Yellow));
-            
+
             posVertical = e.GetPosition(null).Y;
             posHorizontal = e.GetPosition(null).X;
 
             enMovimiento = true;
 
-            if (cvDiagram.Children.IndexOf(item) != foco)
+            if (!item.hasFocus)
             {
-                //item.tbTitulo.Text = cvDiagram.Children.IndexOf(item).ToString() + " - " + foco;
-                //if (foco != -1)
-                //{
-               //     Type tipo = cvDiagram.Children.ElementAt(foco).GetType();
-                //    if(cvDiagram.Children.ElementAt(foco).GetType() != item.GetType())
-                 //   {
-                 //   }
-                 //   View.NodoCuadrado nodo = cvDiagram.Children.ElementAt(foco) as ;
-                 //   nodo.rectangle1.Fill = new SolidColorBrush(Colors.White);
-                //}
-                this.quitarSeleccion();
+                item.setFocus();
             }
-            foco = cvDiagram.Children.IndexOf(item);
-            tipoFoco = "CUADRADO";
 
             item.CaptureMouse();
+
+            if (this.createLine)
+            {
+                item.setPos();
+            }
         }
 
         private void cuadrado_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoCuadrado item = sender as View.NodoCuadrado;
-            //item.rectangle1.SetValue(Ellipse.FillProperty, new SolidColorBrush(Colors.White));
 
             posVertical = -1;
             posHorizontal = -1;
@@ -147,33 +192,36 @@ namespace PruebaPaneles
 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
+                item.setPos();
+                item.moveLines();
             }
         }
 
         private void circulo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             View.NodoCirculo item = sender as View.NodoCirculo;
-            item.elipse.SetValue(Ellipse.FillProperty, new SolidColorBrush(Colors.Yellow));
 
             posVertical = e.GetPosition(null).Y;
             posHorizontal = e.GetPosition(null).X;
 
             enMovimiento = true;
 
-            if (cvDiagram.Children.IndexOf(item) != foco)
+            if (!item.hasFocus)
             {
-                this.quitarSeleccion();
+                item.setFocus();
             }
-            foco = cvDiagram.Children.IndexOf(item);
-            tipoFoco = "CIRCULO";
 
             item.CaptureMouse();
+
+            if (this.createLine)
+            {
+                item.setPos();
+            }
         }
 
         private void circulo_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoCirculo item = sender as View.NodoCirculo;
-            //item.elipse.SetValue(Ellipse.FillProperty, new SolidColorBrush(Colors.White));
 
             posVertical = -1;
             posHorizontal = -1;
@@ -199,33 +247,36 @@ namespace PruebaPaneles
 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
+                item.setPos();
+                item.moveLines();
             }
         }
 
         private void triangulo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             View.NodoTriangulo item = sender as View.NodoTriangulo;
-            item.triangle.SetValue(Polygon.FillProperty, new SolidColorBrush(Colors.Yellow));
 
             posVertical = e.GetPosition(null).Y;
             posHorizontal = e.GetPosition(null).X;
 
             enMovimiento = true;
 
-            if (cvDiagram.Children.IndexOf(item) != foco)
+            if (!item.hasFocus)
             {
-                this.quitarSeleccion();
+                item.setFocus();
             }
-            foco = cvDiagram.Children.IndexOf(item);
-            tipoFoco = "TRIANGULO";
 
             item.CaptureMouse();
+
+            if (this.createLine)
+            {
+                item.setPos();
+            }
         }
 
         private void triangulo_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoTriangulo item = sender as View.NodoTriangulo;
-            //item.triangle.SetValue(Polygon.FillProperty, new SolidColorBrush(Colors.White));
 
             posVertical = -1;
             posHorizontal = -1;
@@ -248,36 +299,39 @@ namespace PruebaPaneles
 
                 item.SetValue(Canvas.TopProperty, newTop);
                 item.SetValue(Canvas.LeftProperty, newLeft);
-
+                
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
+                item.setPos();
+                item.moveLines();
             }
         }
 
         private void pentagono_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             View.NodoPentagono item = sender as View.NodoPentagono;
-            item.pentagono.SetValue(Polygon.FillProperty, new SolidColorBrush(Colors.Yellow));
 
             posVertical = e.GetPosition(null).Y;
             posHorizontal = e.GetPosition(null).X;
 
             enMovimiento = true;
 
-            if (cvDiagram.Children.IndexOf(item) != foco)
+            if (!item.hasFocus)
             {
-                this.quitarSeleccion();
+                item.setFocus();
             }
-            foco = cvDiagram.Children.IndexOf(item);
-            tipoFoco = "PENTAGONO";
 
             item.CaptureMouse();
+
+            if (this.createLine)
+            {
+                item.setPos();
+            }
         }
 
         private void pentagono_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoPentagono item = sender as View.NodoPentagono;
-            //item.pentagono.SetValue(Polygon.FillProperty, new SolidColorBrush(Colors.White));
 
             posVertical = -1;
             posHorizontal = -1;
@@ -303,33 +357,36 @@ namespace PruebaPaneles
 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
+                item.setPos();
+                item.moveLines();
             }
         }
 
         private void nube_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             View.NodoNube item = sender as View.NodoNube;
-            item.nube.Fill = new SolidColorBrush(Colors.Yellow);
 
             posVertical = e.GetPosition(null).Y;
             posHorizontal = e.GetPosition(null).X;
 
             enMovimiento = true;
 
-            if (cvDiagram.Children.IndexOf(item) != foco)
+            if (!item.hasFocus)
             {
-                this.quitarSeleccion();
+                item.setFocus();
             }
-            foco = cvDiagram.Children.IndexOf(item);
-            tipoFoco = "NUBE";
 
             item.CaptureMouse();
+
+            if (this.createLine)
+            {
+                item.setPos();
+            }
         }
 
         private void nube_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoNube item = sender as View.NodoNube;
-            //item.nube.Fill = new SolidColorBrush(Colors.White);
 
             posVertical = -1;
             posHorizontal = -1;
@@ -355,6 +412,8 @@ namespace PruebaPaneles
 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
+                item.setPos();
+                item.moveLines();
             }
         }
 
@@ -367,14 +426,17 @@ namespace PruebaPaneles
 
             enMovimiento = true;
 
-            if (cvDiagram.Children.IndexOf(item) != foco)
+            if (!item.hasFocus)
             {
-                this.quitarSeleccion();
+                item.setFocus();
             }
-            foco = cvDiagram.Children.IndexOf(item);
-            tipoFoco = "NOTA";
 
             item.CaptureMouse();
+
+            if (this.createLine)
+            {
+                item.setPos();
+            }
         }
 
         private void nota_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -405,41 +467,174 @@ namespace PruebaPaneles
 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
+                item.setPos();
+                item.moveLines();
             }
         }
 
-        private void quitarSeleccion()
+        public void quitarSeleccion()
         {
-            if (tipoFoco.Equals("CUADRADO"))
+            if (tipoFoco.Equals(Configuration.CUADRADO))
             {
-                View.NodoCuadrado nodo = cvDiagram.Children.ElementAt(foco) as View.NodoCuadrado;
-                nodo.rectangle1.Fill = new SolidColorBrush(Colors.White);
+                View.NodoCuadrado nodo = this.cvDiagram.Children.ElementAt(foco) as View.NodoCuadrado;
+                nodo.loseFocus();
             }
-            else if(tipoFoco.Equals("CIRCULO"))
+            else if(tipoFoco.Equals(Configuration.CIRCULO))
             {
                 View.NodoCirculo nodo = cvDiagram.Children.ElementAt(foco) as View.NodoCirculo;
-                nodo.elipse.Fill = new SolidColorBrush(Colors.White);
+                nodo.loseFocus();
             }
-            else if (tipoFoco.Equals("TRIANGULO"))
+            else if (tipoFoco.Equals(Configuration.TRIANGULO))
             {
                 View.NodoTriangulo nodo = cvDiagram.Children.ElementAt(foco) as View.NodoTriangulo;
-                nodo.triangle.Fill = new SolidColorBrush(Colors.White);
+                nodo.loseFocus();
             }
-            else if (tipoFoco.Equals("PENTAGONO"))
+            else if (tipoFoco.Equals(Configuration.PENTAGONO))
             {
                 View.NodoPentagono nodo = cvDiagram.Children.ElementAt(foco) as View.NodoPentagono;
-                nodo.pentagono.Fill = new SolidColorBrush(Colors.White);
+                nodo.loseFocus();
             }
-            else if (tipoFoco.Equals("NUBE"))
+            else if (tipoFoco.Equals(Configuration.NUBE))
             {
                 View.NodoNube nodo = cvDiagram.Children.ElementAt(foco) as View.NodoNube;
-                nodo.nube.Fill = new SolidColorBrush(Colors.White);
+                nodo.loseFocus();
             }
-            else if (tipoFoco.Equals("NOTA"))
+            else if (tipoFoco.Equals(Configuration.NOTA))
             {
-                //View.NodoCuadrado nodo = cvDiagram.Children.ElementAt(foco) as View.NodoCuadrado;
-                //nodo.rectangle1.Fill = new SolidColorBrush(Colors.White);
+                View.NodoNota nodo = cvDiagram.Children.ElementAt(foco) as View.NodoNota;
+                nodo.loseFocus();
             }
+            else if (tipoFoco.Equals(Configuration.LINEA))
+            {
+                Line linea = cvDiagram.Children.ElementAt(foco) as Line;
+                linea.Stroke = Configuration.COLOR_NORMAL;
+            }
+        }
+
+        private void btLinea_Click(object sender, RoutedEventArgs e)
+        {
+            if (!this.tipoFoco.Equals(Configuration.LINEA))
+            {
+                linea = new Line();
+                linea.MouseLeftButtonDown += new MouseButtonEventHandler(this.linea_MouseLeftButtonDown);
+                linea.MouseEnter += new MouseEventHandler(this.linea_MouseEnter);
+                linea.MouseLeave += new MouseEventHandler(this.linea_MouseLeave);
+
+                linea.StrokeThickness = Configuration.STROKE_THICKNESS_LINE;
+                linea.Stroke = Configuration.COLOR_TRANSPARENT;
+
+                switch (this.tipoFoco)
+                {
+                    case Configuration.CUADRADO:
+                        View.NodoCuadrado nodoCua = this.cvDiagram.Children.ElementAt(foco) as View.NodoCuadrado;
+                        this.linea.X1 = nodoCua.getPosCenterX();
+                        this.linea.Y1 = nodoCua.getPosCenterY();
+                        this.cvDiagram.Children.Insert(0, this.linea);
+
+                        nodoCua.addLine(linea, 1);
+                        break;
+                    case Configuration.CIRCULO:
+                        View.NodoCirculo nodoCir = this.cvDiagram.Children.ElementAt(foco) as View.NodoCirculo;
+                        this.linea.X1 = nodoCir.getPosCenterX();
+                        this.linea.Y1 = nodoCir.getPosCenterY();
+                        this.cvDiagram.Children.Insert(0, this.linea);
+
+                        nodoCir.addLine(linea, 1);
+                        break;
+                    case Configuration.TRIANGULO:
+                        View.NodoTriangulo nodoTri = this.cvDiagram.Children.ElementAt(foco) as View.NodoTriangulo;
+                        this.linea.X1 = nodoTri.getPosCenterX();
+                        this.linea.Y1 = nodoTri.getPosCenterY();
+                        this.cvDiagram.Children.Insert(0, this.linea);
+
+                        nodoTri.addLine(linea, 1);
+                        break;
+                    case Configuration.PENTAGONO:
+                        View.NodoPentagono nodoPen = this.cvDiagram.Children.ElementAt(foco) as View.NodoPentagono;
+                        this.linea.X1 = nodoPen.getPosCenterX();
+                        this.linea.Y1 = nodoPen.getPosCenterY();
+                        this.cvDiagram.Children.Insert(0, this.linea);
+
+                        nodoPen.addLine(linea, 1);
+                        break;
+                    case Configuration.NUBE:
+                        View.NodoNube nodoNub = this.cvDiagram.Children.ElementAt(foco) as View.NodoNube;
+                        this.linea.X1 = nodoNub.getPosCenterX();
+                        this.linea.Y1 = nodoNub.getPosCenterY();
+                        this.cvDiagram.Children.Insert(0, this.linea);
+
+                        nodoNub.addLine(linea, 1);
+                        break;
+                    case Configuration.NOTA:
+                        View.NodoNota nodoNot = this.cvDiagram.Children.ElementAt(foco) as View.NodoNota;
+                        this.linea.X1 = nodoNot.getPosCenterX();
+                        this.linea.Y1 = nodoNot.getPosCenterY();
+                        this.cvDiagram.Children.Insert(0, this.linea);
+
+                        nodoNot.addLine(linea, 1);
+                        break;
+                }
+
+                this.linea.X2 = this.linea.X1;
+                this.linea.Y2 = this.linea.Y1;
+
+                this.foco++;
+
+                this.createLine = true;
+            }
+            else
+            {
+                Components.WindowMessage msg = new Components.WindowMessage("Error", "Debe tener seleccionado un nodo", Components.WindowMessage.TIPO.OKCANCEL);
+            }
+        }
+
+
+        private void linea_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Line item = sender as Line;
+
+            this.quitarSeleccion();
+
+            if (this.foco != this.cvDiagram.Children.IndexOf(item))
+            {
+                this.quitarSeleccion();
+
+                this.foco = this.cvDiagram.Children.IndexOf(item);
+                this.tipoFoco = Configuration.LINEA;
+
+                item.Stroke = Configuration.COLOR_SELECT;
+
+            }
+
+            item.ReleaseMouseCapture();
+        }
+
+        private void linea_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Line linea = sender as Line;
+            if (this.foco != this.cvDiagram.Children.IndexOf(linea))
+            {
+                linea.Stroke = Configuration.COLOR_MOUSEOVER;
+            }
+        }
+
+        private void linea_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Line linea = sender as Line;
+            if (this.foco == this.cvDiagram.Children.IndexOf(linea))
+            {
+                linea.Stroke = Configuration.COLOR_SELECT;
+            }
+            else
+            {
+                linea.Stroke = Configuration.COLOR_NORMAL;
+            }
+        }
+
+        private void btGrosor_Click(object sender, RoutedEventArgs e)
+        {
+            Components.WindowThickness winGrosor = new Components.WindowThickness();
+            winGrosor.Show();
         }
     }
 }

@@ -6,9 +6,9 @@
     mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400" Width="150" Height="150">
     
-    <Grid x:Name="LayoutRoot">
-    	<Image Margin="0,0,14,5" Source="/PruebaPaneles;component/Images/post-it.png" Stretch="Fill"/>
-    	<TextBox Margin="8,28,24,14" TextWrapping="Wrap" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" BorderThickness="0">
+    <Grid x:Name="nota">
+    	<Image Margin="0,0,14,5" Source="/PruebaPaneles;component/Images/post-it.png" Stretch="Fill" Name="imagenNota" GotFocus="imagenNota_GotFocus" MouseLeftButtonDown="imagenNota_MouseLeftButtonDown" MouseRightButtonDown="imagenNota_MouseRightButtonDown" />
+    	<TextBox Margin="8,28,24,14" TextWrapping="Wrap" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" BorderThickness="0" Name="textNote" GotFocus="textNote_GotFocus">
     		<TextBox.RenderTransform>
     			<CompositeTransform Rotation="-4.036"/>
     		</TextBox.RenderTransform>

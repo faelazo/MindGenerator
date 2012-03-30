@@ -5,6 +5,13 @@
     padding-right: 5%;
 }
 
+#gridLogin
+{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .btLogin
 {
     position: relative;
@@ -67,23 +74,24 @@ span.ui-button-text
     margin-top:-15px;
 }
 
-#aceptReset
+#acceptReset
 {
     
     height: 40px;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     position: relative;
     float: left;
 }
 
 #btOlvidar
 {
-    
     position: relative;
     float: left;
-    width: 100%;
+    width: 90%;
     text-align: right;
-    padding-top: 3%;
+    padding-top: 10px;
 }
 
 #errorMessage

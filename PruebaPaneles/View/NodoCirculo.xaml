@@ -6,17 +6,17 @@
     mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400" Width="150" Height="150">
     
-    <Grid x:Name="LayoutRoot">
-    	<Ellipse x:Name="elipse" Margin="0,0,5,8" Stroke="Black" Width="140" Height="140" Fill="#FFFDFDFD">
+    <Grid x:Name="LayoutRoot" MouseEnter="elipse_MouseEnter" MouseLeave="elipse_MouseLeave">
+    	<Ellipse x:Name="elipse" Margin="0,0,5,8" Stroke="Black" Width="140" Height="140" Fill="#FFFDFDFD" GotFocus="elipse_GotFocus">
     		<Ellipse.Effect>
     			<DropShadowEffect/>
     		</Ellipse.Effect>
     	</Ellipse>
-    	<TextBox x:Name="tbTitulo" Margin="3,55,7,62" TextWrapping="Wrap" Background="{x:Null}" Width="130" FontFamily="Arial Black" FontWeight="Bold" FontSize="12" TextAlignment="Center" BorderThickness="0" />
+    	<TextBox x:Name="tbTitulo" Margin="3,55,7,62" TextWrapping="Wrap" Background="{x:Null}" Width="130" FontFamily="Arial Black" FontWeight="Bold" FontSize="12" TextAlignment="Center" BorderThickness="0" GotFocus="tbTitulo_GotFocus" />
     	<Viewbox x:Name="vbIcono1" HorizontalAlignment="Left" Height="35" Margin="32,16,0,0" VerticalAlignment="Top" Width="35"/>
     	<Viewbox x:Name="vbIcono2" HorizontalAlignment="Right" Height="35" Margin="0,16,36,0" VerticalAlignment="Top" Width="35"/>
-    	<Button x:Name="btLink" Content="Button" HorizontalAlignment="Left" Height="35" Margin="32,0,0,23" VerticalAlignment="Bottom" Width="35"/>
-    	<Button x:Name="btLinkDiagram" Content="Button" HorizontalAlignment="Right" Height="35" Margin="0,0,36,23" VerticalAlignment="Bottom" Width="35"/>
+    	<Button x:Name="btLink" Content="Button" HorizontalAlignment="Left" Height="35" Margin="32,0,0,23" VerticalAlignment="Bottom" Width="35" Click="btLink_Click" />
+    	<Button x:Name="btLinkDiagram" Content="Button" HorizontalAlignment="Right" Height="35" Margin="0,0,36,23" VerticalAlignment="Bottom" Width="35" Click="btLinkDiagram_Click" />
 
     </Grid>
 </UserControl>

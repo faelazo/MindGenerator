@@ -1,0 +1,20 @@
+﻿<controls:ChildWindow
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="PruebaPaneles.Components.WindowThickness"
+           Width="212" Height="161" 
+           Title="Grosor de Línea" OverlayBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" HasCloseButton="False">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Rectangle Height="22" HorizontalAlignment="Left" Name="rectangle1" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="189" Margin="1,0,0,0" MouseLeftButtonDown="rectangle1_MouseLeftButtonDown" MouseEnter="rectangle1_MouseEnter" MouseLeave="rectangle1_MouseLeave" />
+        <Rectangle Height="22" HorizontalAlignment="Left" Margin="1,21,0,0" Name="rectangle2" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="189" MouseLeftButtonDown="rectangle2_MouseLeftButtonDown" MouseEnter="rectangle2_MouseEnter" MouseLeave="rectangle2_MouseLeave" />
+        <Rectangle Height="22" HorizontalAlignment="Left" Margin="1,42,0,0" Name="rectangle3" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="189" MouseLeftButtonDown="rectangle3_MouseLeftButtonDown" MouseEnter="rectangle3_MouseEnter" MouseLeave="rectangle3_MouseLeave" />
+        <Rectangle Height="22" HorizontalAlignment="Left" Margin="1,63,0,0" Name="rectangle4" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="189" MouseLeftButtonDown="rectangle4_MouseLeftButtonDown" MouseEnter="rectangle4_MouseEnter" MouseLeave="rectangle4_MouseLeave" />
+        <Line Fill="Black" Height="10.833" HorizontalAlignment="Center" Margin="0.926,6,1.956,104" Name="line1" Stroke="Black" StrokeThickness="1" UseLayoutRounding="False" VerticalAlignment="Center" Width="187.118" X1="5" X2="180" Y1="5" Y2="5" MouseLeftButtonDown="line1_MouseLeftButtonDown" MouseEnter="rectangle1_MouseEnter" MouseLeave="rectangle1_MouseLeave" />
+        <Line Fill="Black" Height="10.833" HorizontalAlignment="Center" Margin="0.926,0,1.956,84.583" Name="line2" Stroke="Black" StrokeThickness="3" UseLayoutRounding="False" VerticalAlignment="Bottom" Width="187.118" X1="5" X2="180" Y1="5" Y2="5" MouseLeftButtonDown="line2_MouseLeftButtonDown" MouseEnter="rectangle2_MouseEnter" MouseLeave="rectangle2_MouseLeave" />
+        <Line Fill="Black" Height="10.833" HorizontalAlignment="Center" Margin="0.926,46,1.956,64" Name="line3" Stroke="Black" StrokeThickness="5" UseLayoutRounding="False" VerticalAlignment="Center" Width="187.118" X1="5" X2="180" Y1="5" Y2="5" MouseLeftButtonDown="line3_MouseLeftButtonDown" MouseLeave="rectangle3_MouseLeave" MouseEnter="rectangle3_MouseEnter" />
+        <Line Fill="Black" Height="10.833" HorizontalAlignment="Center" Margin="0.926,68.249,1.956,42.917" Name="line4" Stroke="Black" StrokeThickness="7" UseLayoutRounding="False" VerticalAlignment="Center" Width="187.118" X1="5" X2="180" Y1="5" Y2="5" MouseLeftButtonDown="line4_MouseLeftButtonDown" MouseEnter="rectangle4_MouseEnter" MouseLeave="rectangle4_MouseLeave" />
+        <Button x:Name="CancelButton" Content="Cancelar" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" VerticalAlignment="Bottom" d:LayoutOverrides="Height, GridBox" Grid.Row="2" />
+        <Button x:Name="OKButton" Content="Aceptar" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,0,79,0" VerticalAlignment="Bottom" d:LayoutOverrides="Height, GridBox" Grid.Row="2" />
+    </Grid>
+</controls:ChildWindow>
