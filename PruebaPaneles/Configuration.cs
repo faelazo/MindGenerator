@@ -18,6 +18,7 @@ namespace PruebaPaneles
         public static SolidColorBrush COLOR_MOUSEOVER = new SolidColorBrush(Color.FromArgb(255, 190, 187, 187));
         public static SolidColorBrush COLOR_NORMAL = new SolidColorBrush(Colors.Black);
         public static SolidColorBrush COLOR_TRANSPARENT = new SolidColorBrush(Colors.Transparent);
+        public static SolidColorBrush color_selected = new SolidColorBrush(Colors.White);
         
         /*****     CADENAS     *****/
         public const string CUADRADO = "CUADRADO";

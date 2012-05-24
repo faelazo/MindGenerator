@@ -1,19 +1,24 @@
-﻿#perfil
+﻿#perfil #socios
 {
-    width: 100%;
+    width: 45%;
+    float: left;
+    position: relative;
     height: 100%;
 }
 
-#title
+.title
 {
     position: relative;
     float: left;
-    width: 90%;
+    width: 50%;
+    top: 6px;
+    left: 14px;
 }
 
-#lbTitle
+.lbTitle
 {
     font-family: Calibri;
+    width: 50%;
     font-size: 28px;
     font-style:italic;
     font-weight: bold;
@@ -66,4 +71,11 @@
 span.ui-button-text
 {
     font-size: 0.6em;
+}
+
+#listSocios
+{
+    width: 50%;
+    position: relative;
+    float: left;
 }

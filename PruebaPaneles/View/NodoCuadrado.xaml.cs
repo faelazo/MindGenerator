@@ -14,6 +14,8 @@ namespace PruebaPaneles.View
 {
     public partial class NodoCuadrado : UserControl
     {
+        private System.Windows.Threading.DispatcherTimer timer;
+        private System.Windows.Threading.DispatcherTimer timer2;
         public Boolean hasFocus;
         public int indexObject;
         private MainPage padre;
@@ -23,6 +25,8 @@ namespace PruebaPaneles.View
         private double posCenterY;
         public List<Line> lines;
         public List<int> pointLine;
+        public Modelo.Nodo nodo;
+        public Boolean descriptionVisible;
 
         public NodoCuadrado(MainPage p)
         {
@@ -33,6 +37,7 @@ namespace PruebaPaneles.View
             this.hasFocus = false;
             this.lines = new List<Line>();
             this.pointLine = new List<int>();
+            this.descriptionVisible = false;
         }
 
         public List<Line> getLines()
@@ -65,6 +70,11 @@ namespace PruebaPaneles.View
 
             this.posCenterX = this.posX + (width / 2);
             this.posCenterY = this.posY + (height / 2);
+        }
+
+        public void setBackground(SolidColorBrush cbg)
+        {
+            this.rectangle1.Fill = cbg;
         }
 
         public double getPosCenterX()
@@ -148,16 +158,6 @@ namespace PruebaPaneles.View
             this.setFocus();
         }
 
-        private void btLinkDiagram_Click(object sender, RoutedEventArgs e)
-        {
-            this.setFocus();
-        }
-
-        private void btLink_Click(object sender, RoutedEventArgs e)
-        {
-            this.setFocus();
-        }
-
         private void UserControl_MouseEnter(object sender, MouseEventArgs e)
         {
             if (!this.hasFocus)
@@ -179,6 +179,62 @@ namespace PruebaPaneles.View
                 this.rectangle1.StrokeThickness = Configuration.STROKE_THICKNESS_NORMAL;
                 this.rectangle1.Stroke = Configuration.COLOR_NORMAL;
             }
+        }
+
+        private void rectangle1_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if ((!this.descriptionVisible) && (!this.windowDescription1.getMouseEnter()))
+            {
+                timer = new System.Windows.Threading.DispatcherTimer();
+                timer.Interval = new TimeSpan(0, 0, 1);
+                timer.Tick += new EventHandler(Each_Tick);
+                timer.Start();
+            }
+        }
+
+        private void rectangle1_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (this.timer.IsEnabled)
+            {
+                this.timer.Stop();
+            }
+            else
+            {
+                this.descriptionVisible = false;
+                timer = new System.Windows.Threading.DispatcherTimer();
+                timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+                timer.Tick += new EventHandler(Each_Tick_Close);
+                timer.Start();
+            }
+        }
+
+        public void Each_Tick(object o, EventArgs sender)
+        {
+            if (!this.descriptionVisible)
+            {
+                this.descriptionVisible = true;
+                this.windowDescription1.Visibility = Visibility.Visible;
+                timer.Stop();
+            }
+        }
+        public void Each_Tick_Close(object o, EventArgs sender)
+        {
+            if (!this.windowDescription1.getMouseEnter())
+            {
+                this.windowDescription1.Visibility = Visibility.Collapsed;
+                this.descriptionVisible = false;
+                timer.Stop();
+            }
+        }
+
+        private void rectangle1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.descriptionVisible = true;
+        }
+
+        private void rectangle1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            this.descriptionVisible = false;
         }
     }
 }

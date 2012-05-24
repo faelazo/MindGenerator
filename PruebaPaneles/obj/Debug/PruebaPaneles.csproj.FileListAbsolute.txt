@@ -159,3 +159,4 @@ C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPanel
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\Components\WindowThickness.g.i.cs
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\Components\WindowMessage.g.i.cs
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\Components\WindowColor.g.i.cs
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\Components\WindowDescription.g.i.cs

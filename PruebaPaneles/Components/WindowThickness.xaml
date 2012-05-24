@@ -4,7 +4,7 @@
            xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="PruebaPaneles.Components.WindowThickness"
            Width="212" Height="161" 
-           Title="Grosor de Línea" OverlayBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" HasCloseButton="False">
+           Title="Grosor de Línea" HasCloseButton="False">
     <Grid x:Name="LayoutRoot" Margin="2">
         <Rectangle Height="22" HorizontalAlignment="Left" Name="rectangle1" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="189" Margin="1,0,0,0" MouseLeftButtonDown="rectangle1_MouseLeftButtonDown" MouseEnter="rectangle1_MouseEnter" MouseLeave="rectangle1_MouseLeave" />
         <Rectangle Height="22" HorizontalAlignment="Left" Margin="1,21,0,0" Name="rectangle2" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="189" MouseLeftButtonDown="rectangle2_MouseLeftButtonDown" MouseEnter="rectangle2_MouseEnter" MouseLeave="rectangle2_MouseLeave" />

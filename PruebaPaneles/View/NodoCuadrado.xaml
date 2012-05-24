@@ -4,19 +4,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="PruebaPaneles.View.NodoCuadrado"
-    mc:Ignorable="d" Height="150" Width="150" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave">
+    mc:Ignorable="d" Height="150" Width="150" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave" xmlns:my="clr-namespace:PruebaPaneles.Components">
     
     <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="150" GotFocus="Canvas_GotFocus">
-		<Rectangle Height="140" HorizontalAlignment="Left" x:Name="rectangle1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="140" Fill="#FFFDFBFB">
+		<Rectangle Height="140" HorizontalAlignment="Left" x:Name="rectangle1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="140" Fill="#FFFDFBFB" MouseEnter="rectangle1_MouseEnter" MouseLeave="rectangle1_MouseLeave" MouseLeftButtonDown="rectangle1_MouseLeftButtonDown" MouseLeftButtonUp="rectangle1_MouseLeftButtonUp">
 			<Rectangle.Effect>
 				<DropShadowEffect/>
 			</Rectangle.Effect>
 		</Rectangle>
-		<Viewbox x:Name="vbIcono1" Width="35" Stretch="UniformToFill" Height="35" d:LayoutOverrides="Height" Canvas.Left="8" Canvas.Top="34"/>
-		<Viewbox x:Name="vbIcono2" Width="35" Stretch="UniformToFill" Height="35" Canvas.Left="51" Canvas.Top="34" d:LayoutOverrides="Height"/>
-        <Button x:Name="btLinkDiagram" Content="Button" Height="25" Canvas.Left="8" Canvas.Top="73" Width="122" Click="btLinkDiagram_Click" />
-		<Viewbox x:Name="vbIcono3" Width="35" Stretch="UniformToFill" Height="35" Canvas.Left="95" Canvas.Top="34" d:LayoutOverrides="Height"/>
-		<Button x:Name="btLink" Content="Button" Height="25" Canvas.Left="8" Canvas.Top="102" Width="122" Click="btLink_Click" />
-        <TextBox Canvas.Left="0" Canvas.Top="0" Height="28" Name="tbTitulo" Width="140" FontFamily="Arial Black" FontWeight="Bold" FontSize="12" TextAlignment="Center" Background="{x:Null}" BorderThickness="0" GotFocus="tbTitulo_GotFocus" />
+        <TextBox Canvas.Left="0" Canvas.Top="26" Height="28" Name="tbTitulo" Width="140" FontFamily="Arial Black" FontWeight="Bold" FontSize="12" TextAlignment="Center" Background="{x:Null}" BorderThickness="0" GotFocus="tbTitulo_GotFocus" MouseEnter="rectangle1_MouseEnter" />
+        <my:WindowDescription Canvas.Left="85" Canvas.Top="85" x:Name="windowDescription1" Visibility="Collapsed" />
     </Canvas>
 </UserControl>

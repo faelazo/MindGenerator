@@ -25,9 +25,15 @@ namespace PruebaPaneles.Components
             this.rectSelect.Stroke = Configuration.COLOR_SELECT;
         }
 
+        public SolidColorBrush getColor()
+        {
+            return (SolidColorBrush)this.rectSelect.Fill;
+        }
+
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
+            Configuration.color_selected = (SolidColorBrush)this.rectSelect.Fill;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

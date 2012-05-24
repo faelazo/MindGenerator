@@ -23,6 +23,7 @@ namespace PruebaPaneles.View
         private double posCenterY;
         public List<Line> lines;
         public List<int> pointLine;
+        public Modelo.Nodo nodo;
 
         public NodoNube(MainPage p)
         {
@@ -33,6 +34,11 @@ namespace PruebaPaneles.View
             this.hasFocus = false;
             this.lines = new List<Line>();
             this.pointLine = new List<int>();
+        }
+
+        public void setBackground(SolidColorBrush cbg)
+        {
+            this.nube.Fill = cbg;
         }
 
         public List<Line> getLines()

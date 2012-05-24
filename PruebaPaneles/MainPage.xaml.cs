@@ -70,7 +70,7 @@ namespace PruebaPaneles
             nodo.MouseLeftButtonDown += new MouseButtonEventHandler(this.cuadrado_MouseLeftButtonDown);
             nodo.MouseLeftButtonUp += new MouseButtonEventHandler(this.cuadrado_MouseLeftButtonUp);
             nodo.MouseMove += new MouseEventHandler(this.cuadrado_MouseMove);
-
+            
             cvDiagram.Children.Add(nodo);
             nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
             nodo.setFocus();
@@ -640,7 +640,57 @@ namespace PruebaPaneles
         private void btColores_Click(object sender, RoutedEventArgs e)
         {
             Components.WindowColor wc = new Components.WindowColor();
+            wc.Closed += new EventHandler(this.windowColor_Closed);
             wc.Show();
+        }
+
+        private void windowColor_Closed(object sender, EventArgs e)
+        {
+            Components.WindowColor wc = sender as Components.WindowColor;
+
+            if (wc.DialogResult == true)
+            {
+                switch (this.tipoFoco)
+                {
+                    case Configuration.CUADRADO:
+                        View.NodoCuadrado nc = this.cvDiagram.Children.ElementAt(this.foco) as View.NodoCuadrado;
+                        nc.setBackground(wc.getColor());
+                        break;
+                    case Configuration.CIRCULO:
+                        View.NodoCirculo nci = this.cvDiagram.Children.ElementAt(this.foco) as View.NodoCirculo;
+                        nci.setBackground(wc.getColor());
+                        break;
+                    case Configuration.TRIANGULO:
+                        View.NodoTriangulo nt = this.cvDiagram.Children.ElementAt(this.foco) as View.NodoTriangulo;
+                        nt.setBackground(wc.getColor());
+                        break;
+                    case Configuration.PENTAGONO:
+                        View.NodoPentagono np = this.cvDiagram.Children.ElementAt(this.foco) as View.NodoPentagono;
+                        np.setBackground(wc.getColor());
+                        break;
+                    case Configuration.NUBE:
+                        View.NodoNube nn = this.cvDiagram.Children.ElementAt(this.foco) as View.NodoNube;
+                        nn.setBackground(wc.getColor());
+                        break;
+                }
+            }
+        }
+
+        private void btIconos_Click(object sender, RoutedEventArgs e)
+        {
+            switch (this.tipoFoco)
+            {
+                case Configuration.CUADRADO:
+                    break;
+                case Configuration.CIRCULO:
+                    break;
+                case Configuration.TRIANGULO:
+                    break;
+                case Configuration.PENTAGONO:
+                    break;
+                case Configuration.NUBE:
+                    break;
+            }
         }
     }
 }

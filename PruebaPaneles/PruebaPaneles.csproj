@@ -87,6 +87,9 @@
     <Compile Include="Components\WindowColor.xaml.cs">
       <DependentUpon>WindowColor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\WindowDescription.xaml.cs">
+      <DependentUpon>WindowDescription.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\WindowMessage.xaml.cs">
       <DependentUpon>WindowMessage.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Nodo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\NodoCuadrado.xaml.cs">
       <DependentUpon>NodoCuadrado.xaml</DependentUpon>
@@ -123,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="Components\WindowColor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\WindowDescription.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,6 +231,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\post-it.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
