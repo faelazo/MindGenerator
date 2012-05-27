@@ -9,11 +9,13 @@
     <AssemblyPart x:Name="System.Windows.Controls.Data.Input" Source="System.Windows.Controls.Data.Input.dll" />
     <AssemblyPart x:Name="System.Windows.Controls" Source="System.Windows.Controls.dll" />
     <AssemblyPart x:Name="System.Windows.Controls.Layout.Toolkit" Source="System.Windows.Controls.Layout.Toolkit.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Navigation" Source="System.Windows.Controls.Navigation.dll" />
     <AssemblyPart x:Name="System.Windows.Controls.Toolkit" Source="System.Windows.Controls.Toolkit.dll" />
     <AssemblyPart x:Name="System.Windows.Controls.Toolkit.Internals" Source="System.Windows.Controls.Toolkit.Internals.dll" />
     <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
     <AssemblyPart Source="es/System.ComponentModel.DataAnnotations.resources.dll" />
     <AssemblyPart Source="es/System.Windows.Controls.resources.dll" />
     <AssemblyPart Source="es/System.Windows.Controls.Data.Input.resources.dll" />
+    <AssemblyPart Source="es/System.Windows.Controls.Navigation.resources.dll" />
   </Deployment.Parts>
 </Deployment>

@@ -23,6 +23,9 @@ namespace PruebaPaneles
         public Boolean createLine;
         public Line linea;
 
+        double OriginalWidth;
+        double originalHeight;
+
         public MainPage()
         {
             InitializeComponent();
@@ -30,6 +33,15 @@ namespace PruebaPaneles
             foco = -1;
             tipoFoco = "";
             createLine = false;
+            this.setFoco(null, "");
+
+            View.NodoPrincipal nP = new View.NodoPrincipal(this);
+            nP.SetValue(Canvas.MarginProperty, new Thickness(1200,1200,0,0));
+            nP.MouseLeftButtonDown += new MouseButtonEventHandler(this.principal_MouseLeftButtonDown);
+            nP.MouseLeftButtonUp += new MouseButtonEventHandler(this.principal_MouseLeftButtonUp);
+            this.cvDiagram.Children.Add(nP);
+            nP.setFocus();
+            nP.setPos(1200, 1200);
         }
 
         public void setFoco(object f, String t)
@@ -60,6 +72,10 @@ namespace PruebaPaneles
                     View.NodoNota nodoNot = f as View.NodoNota;
                     this.foco = this.cvDiagram.Children.IndexOf(nodoNot);
                     break;
+                case Configuration.PRINCIPAL:
+                    View.NodoPrincipal nodoPri = f as View.NodoPrincipal;
+                    this.foco = this.cvDiagram.Children.IndexOf(nodoPri);
+                    break;
             }
             this.tipoFoco = t;
         }
@@ -74,9 +90,13 @@ namespace PruebaPaneles
             cvDiagram.Children.Add(nodo);
             nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
             nodo.setFocus();
-            nodo.setPos();
+            double x, y;
+            x = this.scroller.HorizontalOffset/this.Slider1.Value;
+            y = this.scroller.VerticalOffset / this.Slider1.Value;
+            nodo.SetValue(Canvas.TopProperty, y);
+            nodo.SetValue(Canvas.LeftProperty, x);
+            nodo.setPos(y, x);
         }
-
         private void btCirculo_Click(object sender, RoutedEventArgs e)
         {
             View.NodoCirculo nodo = new View.NodoCirculo(this);
@@ -87,9 +107,13 @@ namespace PruebaPaneles
             cvDiagram.Children.Add(nodo);
             nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
             nodo.setFocus();
-            nodo.setPos();
+            double x, y;
+            x = this.scroller.HorizontalOffset / this.Slider1.Value;
+            y = this.scroller.VerticalOffset / this.Slider1.Value;
+            nodo.SetValue(Canvas.TopProperty, y);
+            nodo.SetValue(Canvas.LeftProperty, x);
+            nodo.setPos(y, x);
         }
-
         private void btTriangulo_Click(object sender, RoutedEventArgs e)
         {
             View.NodoTriangulo nodo = new View.NodoTriangulo(this);
@@ -100,9 +124,13 @@ namespace PruebaPaneles
             cvDiagram.Children.Add(nodo);
             nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
             nodo.setFocus();
-            nodo.setPos();
+            double x, y;
+            x = this.scroller.HorizontalOffset / this.Slider1.Value;
+            y = this.scroller.VerticalOffset / this.Slider1.Value;
+            nodo.SetValue(Canvas.TopProperty, y);
+            nodo.SetValue(Canvas.LeftProperty, x);
+            nodo.setPos(y, x);
         }
-
         private void btPentagono_Click(object sender, RoutedEventArgs e)
         {
             View.NodoPentagono nodo = new View.NodoPentagono(this);
@@ -113,9 +141,13 @@ namespace PruebaPaneles
             cvDiagram.Children.Add(nodo);
             nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
             nodo.setFocus();
-            nodo.setPos();
+            double x, y;
+            x = this.scroller.HorizontalOffset / this.Slider1.Value;
+            y = this.scroller.VerticalOffset / this.Slider1.Value;
+            nodo.SetValue(Canvas.TopProperty, y);
+            nodo.SetValue(Canvas.LeftProperty, x);
+            nodo.setPos(y, x);
         }
-
         private void btNube_Click(object sender, RoutedEventArgs e)
         {
             View.NodoNube nodo = new View.NodoNube(this);
@@ -126,9 +158,13 @@ namespace PruebaPaneles
             cvDiagram.Children.Add(nodo);
             nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
             nodo.setFocus();
-            nodo.setPos();
+            double x, y;
+            x = this.scroller.HorizontalOffset / this.Slider1.Value;
+            y = this.scroller.VerticalOffset / this.Slider1.Value;
+            nodo.SetValue(Canvas.TopProperty, y);
+            nodo.SetValue(Canvas.LeftProperty, x);
+            nodo.setPos(y, x);
         }
-
         private void btChincheta_Click(object sender, RoutedEventArgs e)
         {
             View.NodoNota nodo = new View.NodoNota(this);
@@ -139,7 +175,38 @@ namespace PruebaPaneles
             cvDiagram.Children.Add(nodo);
             nodo.setIndex(cvDiagram.Children.IndexOf(nodo));
             nodo.setFocus();
-            nodo.setPos();
+            double x, y;
+            x = this.scroller.HorizontalOffset / this.Slider1.Value;
+            y = this.scroller.VerticalOffset / this.Slider1.Value;
+            nodo.SetValue(Canvas.TopProperty, y);
+            nodo.SetValue(Canvas.LeftProperty, x);
+            nodo.setPos(y, x);
+        }
+
+        private void principal_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            View.NodoPrincipal item = sender as View.NodoPrincipal;
+
+            posVertical = e.GetPosition(null).Y/this.scroller.VerticalOffset;
+            posHorizontal = e.GetPosition(null).X/this.scroller.HorizontalOffset;
+
+            if (!item.hasFocus)
+            {
+                item.setFocus();
+            }
+
+            item.CaptureMouse();
+
+            if (this.createLine)
+            {
+                item.setPos(posHorizontal, posVertical);
+            }
+        }
+        private void principal_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            View.NodoPrincipal item = sender as View.NodoPrincipal;
+
+            item.ReleaseMouseCapture();
         }
 
         private void cuadrado_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -160,10 +227,9 @@ namespace PruebaPaneles
 
             if (this.createLine)
             {
-                item.setPos();
+                item.setPos(posHorizontal, posVertical);
             }
         }
-
         private void cuadrado_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoCuadrado item = sender as View.NodoCuadrado;
@@ -175,15 +241,14 @@ namespace PruebaPaneles
 
             item.ReleaseMouseCapture();
         }
-
         private void cuadrado_MouseMove(object sender, MouseEventArgs e)
         {
             if (enMovimiento)
             {
                 View.NodoCuadrado item = sender as View.NodoCuadrado;
 
-                double deltaV = e.GetPosition(null).Y - posVertical;
-                double deltaH = e.GetPosition(null).X - posHorizontal;
+                double deltaV = (e.GetPosition(null).Y - posVertical)/this.Slider1.Value;
+                double deltaH = (e.GetPosition(null).X - posHorizontal)/this.Slider1.Value;
                 double newTop = deltaV + (double)item.GetValue(Canvas.TopProperty);
                 double newLeft = deltaH + (double)item.GetValue(Canvas.LeftProperty);
 
@@ -192,7 +257,7 @@ namespace PruebaPaneles
 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
-                item.setPos();
+                item.setPos(newTop, newLeft);
                 item.moveLines();
             }
         }
@@ -215,10 +280,9 @@ namespace PruebaPaneles
 
             if (this.createLine)
             {
-                item.setPos();
+                item.setPos(posHorizontal, posVertical);
             }
         }
-
         private void circulo_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoCirculo item = sender as View.NodoCirculo;
@@ -230,15 +294,14 @@ namespace PruebaPaneles
 
             item.ReleaseMouseCapture();
         }
-
         private void circulo_MouseMove(object sender, MouseEventArgs e)
         {
             if (enMovimiento)
             {
                 View.NodoCirculo item = sender as View.NodoCirculo;
 
-                double deltaV = e.GetPosition(null).Y - posVertical;
-                double deltaH = e.GetPosition(null).X - posHorizontal;
+                double deltaV = (e.GetPosition(null).Y - posVertical)/this.Slider1.Value;
+                double deltaH = (e.GetPosition(null).X - posHorizontal)/this.Slider1.Value;
                 double newTop = deltaV + (double)item.GetValue(Canvas.TopProperty);
                 double newLeft = deltaH + (double)item.GetValue(Canvas.LeftProperty);
 
@@ -247,7 +310,7 @@ namespace PruebaPaneles
 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
-                item.setPos();
+                item.setPos(newTop, newLeft);
                 item.moveLines();
             }
         }
@@ -270,10 +333,9 @@ namespace PruebaPaneles
 
             if (this.createLine)
             {
-                item.setPos();
+                item.setPos(posHorizontal, posVertical);
             }
         }
-
         private void triangulo_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoTriangulo item = sender as View.NodoTriangulo;
@@ -285,15 +347,14 @@ namespace PruebaPaneles
 
             item.ReleaseMouseCapture();
         }
-
         private void triangulo_MouseMove(object sender, MouseEventArgs e)
         {
             if (enMovimiento)
             {
                 View.NodoTriangulo item = sender as View.NodoTriangulo;
 
-                double deltaV = e.GetPosition(null).Y - posVertical;
-                double deltaH = e.GetPosition(null).X - posHorizontal;
+                double deltaV = (e.GetPosition(null).Y - posVertical)/this.Slider1.Value;
+                double deltaH = (e.GetPosition(null).X - posHorizontal)/this.Slider1.Value;
                 double newTop = deltaV + (double)item.GetValue(Canvas.TopProperty);
                 double newLeft = deltaH + (double)item.GetValue(Canvas.LeftProperty);
 
@@ -302,7 +363,7 @@ namespace PruebaPaneles
                 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
-                item.setPos();
+                item.setPos(newTop, newLeft);
                 item.moveLines();
             }
         }
@@ -325,10 +386,9 @@ namespace PruebaPaneles
 
             if (this.createLine)
             {
-                item.setPos();
+                item.setPos(posHorizontal, posVertical);
             }
         }
-
         private void pentagono_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoPentagono item = sender as View.NodoPentagono;
@@ -340,15 +400,14 @@ namespace PruebaPaneles
 
             item.ReleaseMouseCapture();
         }
-
         private void pentagono_MouseMove(object sender, MouseEventArgs e)
         {
             if (enMovimiento)
             {
                 View.NodoPentagono item = sender as View.NodoPentagono;
 
-                double deltaV = e.GetPosition(null).Y - posVertical;
-                double deltaH = e.GetPosition(null).X - posHorizontal;
+                double deltaV = (e.GetPosition(null).Y - posVertical)/this.Slider1.Value;
+                double deltaH = (e.GetPosition(null).X - posHorizontal)/this.Slider1.Value;
                 double newTop = deltaV + (double)item.GetValue(Canvas.TopProperty);
                 double newLeft = deltaH + (double)item.GetValue(Canvas.LeftProperty);
 
@@ -357,7 +416,7 @@ namespace PruebaPaneles
 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
-                item.setPos();
+                item.setPos(newTop, newLeft);
                 item.moveLines();
             }
         }
@@ -380,10 +439,9 @@ namespace PruebaPaneles
 
             if (this.createLine)
             {
-                item.setPos();
+                item.setPos(posHorizontal, posVertical);
             }
         }
-
         private void nube_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoNube item = sender as View.NodoNube;
@@ -395,15 +453,14 @@ namespace PruebaPaneles
 
             item.ReleaseMouseCapture();
         }
-
         private void nube_MouseMove(object sender, MouseEventArgs e)
         {
             if (enMovimiento)
             {
                 View.NodoNube item = sender as View.NodoNube;
 
-                double deltaV = e.GetPosition(null).Y - posVertical;
-                double deltaH = e.GetPosition(null).X - posHorizontal;
+                double deltaV = (e.GetPosition(null).Y - posVertical)/this.Slider1.Value;
+                double deltaH = (e.GetPosition(null).X - posHorizontal)/this.Slider1.Value;
                 double newTop = deltaV + (double)item.GetValue(Canvas.TopProperty);
                 double newLeft = deltaH + (double)item.GetValue(Canvas.LeftProperty);
 
@@ -412,7 +469,7 @@ namespace PruebaPaneles
 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
-                item.setPos();
+                item.setPos(newTop, newLeft);
                 item.moveLines();
             }
         }
@@ -435,10 +492,9 @@ namespace PruebaPaneles
 
             if (this.createLine)
             {
-                item.setPos();
+                item.setPos(posHorizontal, posVertical);
             }
         }
-
         private void nota_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             View.NodoNota item = sender as View.NodoNota;
@@ -450,15 +506,14 @@ namespace PruebaPaneles
 
             item.ReleaseMouseCapture();
         }
-
         private void nota_MouseMove(object sender, MouseEventArgs e)
         {
             if (enMovimiento)
             {
                 View.NodoNota item = sender as View.NodoNota;
 
-                double deltaV = e.GetPosition(null).Y - posVertical;
-                double deltaH = e.GetPosition(null).X - posHorizontal;
+                double deltaV = (e.GetPosition(null).Y - posVertical)/this.Slider1.Value;
+                double deltaH = (e.GetPosition(null).X - posHorizontal)/this.Slider1.Value;
                 double newTop = deltaV + (double)item.GetValue(Canvas.TopProperty);
                 double newLeft = deltaH + (double)item.GetValue(Canvas.LeftProperty);
 
@@ -467,7 +522,7 @@ namespace PruebaPaneles
 
                 posVertical = e.GetPosition(null).Y;
                 posHorizontal = e.GetPosition(null).X;
-                item.setPos();
+                item.setPos(newTop, newLeft);
                 item.moveLines();
             }
         }
@@ -508,6 +563,11 @@ namespace PruebaPaneles
             {
                 Line linea = cvDiagram.Children.ElementAt(foco) as Line;
                 linea.Stroke = Configuration.COLOR_NORMAL;
+            }
+            else if(tipoFoco.Equals(Configuration.PRINCIPAL))
+            {
+                View.NodoPrincipal nodo = cvDiagram.Children.ElementAt(foco) as View.NodoPrincipal;
+                nodo.loseFocus();
             }
         }
 
@@ -573,6 +633,14 @@ namespace PruebaPaneles
 
                         nodoNot.addLine(linea, 1);
                         break;
+                    case Configuration.PRINCIPAL:
+                        View.NodoPrincipal nodoPri = this.cvDiagram.Children.ElementAt(foco) as View.NodoPrincipal;
+                        this.linea.X1 = nodoPri.getPosCenterX();
+                        this.linea.Y1 = nodoPri.getPosCenterY();
+                        this.cvDiagram.Children.Insert(0, this.linea);
+
+                        nodoPri.addLine(linea, 1);
+                        break;
                 }
 
                 this.linea.X2 = this.linea.X1;
@@ -587,7 +655,6 @@ namespace PruebaPaneles
                 Components.WindowMessage msg = new Components.WindowMessage("Error", "Debe tener seleccionado un nodo", Components.WindowMessage.TIPO.OKCANCEL);
             }
         }
-
 
         private void linea_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -608,7 +675,6 @@ namespace PruebaPaneles
 
             item.ReleaseMouseCapture();
         }
-
         private void linea_MouseEnter(object sender, MouseEventArgs e)
         {
             Line linea = sender as Line;
@@ -617,7 +683,6 @@ namespace PruebaPaneles
                 linea.Stroke = Configuration.COLOR_MOUSEOVER;
             }
         }
-
         private void linea_MouseLeave(object sender, MouseEventArgs e)
         {
             Line linea = sender as Line;
@@ -672,6 +737,10 @@ namespace PruebaPaneles
                         View.NodoNube nn = this.cvDiagram.Children.ElementAt(this.foco) as View.NodoNube;
                         nn.setBackground(wc.getColor());
                         break;
+                    case Configuration.PRINCIPAL:
+                        View.NodoPrincipal npr = this.cvDiagram.Children.ElementAt(this.foco) as View.NodoPrincipal;
+                        npr.setBackground(wc.getColor());
+                        break;
                 }
             }
         }
@@ -691,6 +760,43 @@ namespace PruebaPaneles
                 case Configuration.NUBE:
                     break;
             }
+        }
+
+        private void content_Loaded(object sender, RoutedEventArgs e)
+        {
+            originalHeight = content.ActualHeight;
+            OriginalWidth = content.ActualWidth;
+        }
+        private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (this.Slider1 != null)
+            {
+                CanvasScaleTransform.ScaleX = Slider1.Value;
+                CanvasScaleTransform.ScaleY = Slider1.Value;
+                content.Height = originalHeight * Slider1.Value;
+                content.Width = OriginalWidth * Slider1.Value;
+
+                string porcentaje = "%";
+                double aux;
+                if (this.Slider1.Value >= 1)
+                {
+                    aux = (Math.Round(this.Slider1.Value,2) - 1) * 100;
+                    porcentaje = aux + porcentaje;
+                }
+                else
+                {
+                    aux = (1 - Math.Round(this.Slider1.Value, 2)) * 100;
+                    porcentaje = "-" + aux + porcentaje;
+                }
+
+                this.label2.Content = porcentaje;
+            }
+        }
+
+        private void cvDiagram_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.scroller.ScrollToVerticalOffset(1100);
+            this.scroller.ScrollToHorizontalOffset(900);
         }
     }
 }

@@ -136,10 +136,10 @@
         				</ScrollViewer>
         			</StackPanel>
         		</Border>
-                <Border BorderBrush="LightGray" BorderThickness="1" Height="74" CornerRadius="5" Margin="0,2">
-        			<StackPanel Height="69">
+                <Border BorderBrush="LightGray" BorderThickness="1" Height="110" CornerRadius="5" Margin="0,2">
+        			<StackPanel Height="105">
         				<sdk:Label Content="Propiedades" FontWeight="Bold" Foreground="#FF9B3EFD" FontFamily="Aharoni" FontSize="14.667" Margin="0,5,0,0"/>
-        				<Grid Height="46">
+        				<Grid Height="82">
                             <Button Margin="8,8,110,0" VerticalAlignment="Top" Width="30" Height="30" Name="btTexto" ToolTipService.ToolTip="Texto" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand">
         						<Image Source="Images/texto.png" Stretch="Fill" Width="25" Height="25"/>
         					</Button>
@@ -149,6 +149,8 @@
                             <Button Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Height="30" Margin="76,8,42,0" Name="btGrosor" ToolTipService.ToolTip="Grosor" VerticalAlignment="Top" Width="30" Click="btGrosor_Click">
                                 <Image Height="25" Source="/PruebaPaneles;component/Images/linea.png" Stretch="Fill" Width="25" />
                             </Button>
+                            <sdk:Label Name="label2" Width="32" Content="0%" HorizontalContentAlignment="Center" Margin="120,49,6,10" />
+                            <Slider x:Name="Slider1" ValueChanged="Slider1_ValueChanged" Height="23" Width="100" Minimum="0" Maximum="2" Margin="16,49,42,10" Value="1" SmallChange="1" LargeChange="0.1"></Slider>
                         </Grid>
         			</StackPanel>
         		</Border>
@@ -171,7 +173,7 @@
         				</Grid>
         			</StackPanel>
         		</Border>
-        	</StackPanel>
+            </StackPanel>
         </Border>
         <Border x:Name="borderTrees" BorderBrush="#FF9B3EFD" BorderThickness="2" CornerRadius="5" toolkit:DockPanel.Dock="Right" Background="White" Width="200" Margin="2,0,0,0">
         	<sdk:TreeView/>
@@ -184,10 +186,19 @@
                 </RichTextBox>
             </toolkit:DockPanel>
         </Border>
-        <Border x:Name="borderDiagram" BorderBrush="#FF9B3EFD" BorderThickness="2" CornerRadius="5" Background="White" toolkit:DockPanel.Dock="Top" Margin="2,0,2,2">
-        	<ScrollViewer VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Visible" Margin="0" Background="#FFFDFDFD" x:Name="svDiagram">
-        		<Canvas Width="3000" Height="3000" Background="#FFFDFDFD" x:Name="cvDiagram"></Canvas>
-        	</ScrollViewer>
+        <Border x:Name="borderDiagram" BorderBrush="#FF9B3EFD" BorderThickness="2" CornerRadius="5" Background="White" toolkit:DockPanel.Dock="Top" Margin="2,0,2,2" Height="524">
+            <Grid x:Name="LayoutRoot" Background="White">
+                <ScrollViewer x:Name="scroller" HorizontalScrollBarVisibility="Visible" Margin="0,0,0,0">
+                    <Canvas x:Name="content" Loaded="content_Loaded" Height="3000" Width="3000">
+                        <Canvas.RenderTransform>
+                            <ScaleTransform x:Name="CanvasScaleTransform" ></ScaleTransform>
+                        </Canvas.RenderTransform>
+                        <Canvas Height="3000" HorizontalAlignment="Left" Margin="0,0,0,0" Name="cvDiagram" VerticalAlignment="Top" Width="3000" Loaded="cvDiagram_Loaded">
+                            
+                        </Canvas>
+                    </Canvas>
+                </ScrollViewer>
+            </Grid>
         </Border>
     </toolkit:DockPanel>
 </UserControl>

@@ -28,6 +28,7 @@ namespace PruebaPaneles
         public const string NUBE = "NUBE";
         public const string NOTA = "NOTA";
         public const string LINEA = "LINEA";
+        public const string PRINCIPAL = "PRINCIPAL";
 
         /*****     ENTEROS     *****/
         public static int STROKE_THICKNESS_NORMAL = 1;

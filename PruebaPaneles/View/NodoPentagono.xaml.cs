@@ -62,6 +62,12 @@ namespace PruebaPaneles.View
             this.posX = (double)this.GetValue(Canvas.LeftProperty);
             this.setCenter();
         }
+        public void setPos(double x, double y)
+        {
+            this.posY = x;
+            this.posX = y;
+            this.setCenter();
+        }
 
         public void setCenter()
         {

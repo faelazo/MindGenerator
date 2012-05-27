@@ -160,3 +160,15 @@ C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPanel
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\Components\WindowMessage.g.i.cs
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\Components\WindowColor.g.i.cs
 C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\Components\WindowDescription.g.i.cs
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\System.Windows.Controls.Navigation.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\de\System.Windows.Controls.Navigation.resources.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\es\System.Windows.Controls.Navigation.resources.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\fr\System.Windows.Controls.Navigation.resources.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\it\System.Windows.Controls.Navigation.resources.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\ja\System.Windows.Controls.Navigation.resources.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\ko\System.Windows.Controls.Navigation.resources.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\ru\System.Windows.Controls.Navigation.resources.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\zh-Hans\System.Windows.Controls.Navigation.resources.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\Bin\Debug\zh-Hant\System.Windows.Controls.Navigation.resources.dll
+C:\Users\Fael\documents\visual studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\Components\WindowProperties.g.i.cs
+C:\Users\Fael\Documents\Visual Studio 2010\Projects\SolPruebaPaneles\PruebaPaneles\obj\Debug\View\NodoPrincipal.g.i.cs

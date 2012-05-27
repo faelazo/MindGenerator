@@ -7,12 +7,16 @@
     mc:Ignorable="d" Height="150" Width="150" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave" xmlns:my="clr-namespace:PruebaPaneles.Components">
     
     <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="150" GotFocus="Canvas_GotFocus">
-		<Rectangle Height="140" HorizontalAlignment="Left" x:Name="rectangle1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="140" Fill="#FFFDFBFB" MouseEnter="rectangle1_MouseEnter" MouseLeave="rectangle1_MouseLeave" MouseLeftButtonDown="rectangle1_MouseLeftButtonDown" MouseLeftButtonUp="rectangle1_MouseLeftButtonUp">
+		<Rectangle Height="140" HorizontalAlignment="Left" x:Name="rectangle1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="140" Fill="#FFFDFBFB">
 			<Rectangle.Effect>
 				<DropShadowEffect/>
 			</Rectangle.Effect>
 		</Rectangle>
-        <TextBox Canvas.Left="0" Canvas.Top="26" Height="28" Name="tbTitulo" Width="140" FontFamily="Arial Black" FontWeight="Bold" FontSize="12" TextAlignment="Center" Background="{x:Null}" BorderThickness="0" GotFocus="tbTitulo_GotFocus" MouseEnter="rectangle1_MouseEnter" />
-        <my:WindowDescription Canvas.Left="85" Canvas.Top="85" x:Name="windowDescription1" Visibility="Collapsed" />
+        <TextBox Canvas.Left="0" Canvas.Top="0" Height="101" Name="tbTitulo" Width="140" FontFamily="Arial Black" FontWeight="Bold" FontSize="12" TextAlignment="Center" Background="{x:Null}" BorderThickness="0" GotFocus="tbTitulo_GotFocus" />
+        <Image Canvas.Left="4" Canvas.Top="109" Height="20" Name="image1" Stretch="Fill" Width="20" Source="/PruebaPaneles;component/Images/imagen24.png" ToolTipService.ToolTip="Imagen" />
+        <Image Canvas.Left="32" Canvas.Top="109" Height="20" Name="image2" Stretch="Fill" Width="20" Source="/PruebaPaneles;component/Images/icono24.png" ToolTipService.ToolTip="Iconos"/>
+        <Image Canvas.Left="60" Canvas.Top="109" Height="20" Name="image3" Stretch="Fill" Width="20" Source="/PruebaPaneles;component/Images/descripcion24.png" ToolTipService.ToolTip="Descripción"/>
+        <Image Canvas.Left="88" Canvas.Top="109" Height="20" Name="image4" Stretch="Fill" Width="20" Source="/PruebaPaneles;component/Images/enlaceDiagrama24.png" ToolTipService.ToolTip="Enlace a Diagrama"/>
+        <Image Canvas.Left="117" Canvas.Top="109" Height="20" Name="image5" Stretch="Fill" Width="20" Source="/PruebaPaneles;component/Images/enlaceURL24.png" ToolTipService.ToolTip="URL"/>
     </Canvas>
 </UserControl>

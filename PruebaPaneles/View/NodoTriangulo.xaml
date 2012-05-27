@@ -10,10 +10,11 @@
     			<CompositeTransform Rotation="89.926"/>
     		</ed:RegularPolygon.RenderTransform>
     	</ed:RegularPolygon>
-    	<TextBox x:Name="lbTitulo" Margin="3,57,42,60" TextWrapping="Wrap" Width="105" Height="33" BorderThickness="0" FontFamily="Arial Black" FontWeight="Bold" FontSize="12" TextAlignment="Center" Background="{x:Null}" GotFocus="lbTitulo_GotFocus" />
-    	<Viewbox x:Name="cvIcono1" HorizontalAlignment="Left" Height="33" Margin="4,22,0,0" VerticalAlignment="Top" Width="33"/>
-    	<Viewbox x:Name="cvIcono2" HorizontalAlignment="Left" Height="33" Margin="4,0,0,25" VerticalAlignment="Bottom" Width="33"/>
-    	<Button x:Name="btLink" Content="Button" Height="15" Margin="41,40,74,0" VerticalAlignment="Top" Width="35" Click="btLink_Click" />
-    	<Button x:Name="btLinkDiagram" Content="Button" Height="15" Margin="41,0,74,43" VerticalAlignment="Bottom" Width="35" Click="btLinkDiagram_Click" />
+    	<TextBox x:Name="lbTitulo" Margin="3,0,12,71" TextWrapping="Wrap" BorderThickness="0" FontFamily="Arial Black" FontWeight="Bold" FontSize="12" TextAlignment="Center" Background="{x:Null}" GotFocus="lbTitulo_GotFocus" />
+        <Image Height="20" HorizontalAlignment="Left" Margin="3,85,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="20" Source="/PruebaPaneles;component/Images/imagen24.png" ToolTipService.ToolTip="Imagen"/>
+        <Image Height="20" HorizontalAlignment="Left" Margin="29,85,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="20" Source="/PruebaPaneles;component/Images/icono24.png" ToolTipService.ToolTip="Iconos"/>
+        <Image Height="20" HorizontalAlignment="Left" Margin="55,85,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="20" Source="/PruebaPaneles;component/Images/descripcion24.png" ToolTipService.ToolTip="Descripción"/>
+        <Image Height="20" HorizontalAlignment="Left" Margin="3,111,0,0" Name="image4" Stretch="Fill" VerticalAlignment="Top" Width="20" Source="/PruebaPaneles;component/Images/enlaceDiagrama24.png" ToolTipService.ToolTip="Enlace a diagrama"/>
+        <Image Height="20" HorizontalAlignment="Left" Margin="29,111,0,0" Name="image5" Stretch="Fill" VerticalAlignment="Top" Width="20" Source="/PruebaPaneles;component/Images/enlaceURL24.png" ToolTipService.ToolTip="URL"/>
     </Grid>
 </UserControl>

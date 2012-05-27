@@ -14,12 +14,11 @@
     			<DropShadowEffect/>
     		</ed:RegularPolygon.Effect>
     	</ed:RegularPolygon>
-    	<TextBox x:Name="lbTitulo" Margin="10,51,15,69" TextWrapping="Wrap" Background="{x:Null}" Width="125" Height="30" FontFamily="Arial Black" FontWeight="Bold" FontSize="12" TextAlignment="Center" BorderThickness="0" GotFocus="lbTitulo_GotFocus" />
-    	<Viewbox x:Name="cvIcono1" Height="30" Margin="56,17,64,0" VerticalAlignment="Top" Width="30"/>
-    	<Viewbox x:Name="cvIcono2" Height="30" Margin="26,0,0,35" VerticalAlignment="Bottom" Width="30" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
-    	<Viewbox x:Name="cvIcono3" Height="30" Margin="0,0,28,35" VerticalAlignment="Bottom" Width="30" HorizontalAlignment="Right" d:LayoutOverrides="Width"/>
-    	<Button x:Name="btLink" Content="Button" HorizontalAlignment="Left" Height="24" Margin="32,0,0,8" VerticalAlignment="Bottom" Width="35" Click="btLink_Click" />
-    	<Button x:Name="btLinkDiagram" Content="Button" HorizontalAlignment="Right" Height="24" Margin="0,0,36,8" VerticalAlignment="Bottom" Width="35" Click="btLinkDiagram_Click" />
-
+    	<TextBox x:Name="lbTitulo" Margin="10,0,15,55" TextWrapping="Wrap" Background="{x:Null}" Width="125" FontFamily="Arial Black" FontWeight="Bold" FontSize="12" TextAlignment="Center" BorderThickness="0" GotFocus="lbTitulo_GotFocus" />
+        <Image Height="20" HorizontalAlignment="Left" Margin="21,101,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="20" Source="/PruebaPaneles;component/Images/imagen24.png" ToolTipService.ToolTip="Imagen"/>
+        <Image Height="20" HorizontalAlignment="Left" Margin="61,101,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="20" Source="/PruebaPaneles;component/Images/icono24.png" ToolTipService.ToolTip="Iconos"/>
+        <Image Height="20" HorizontalAlignment="Left" Margin="101,101,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="20" Source="/PruebaPaneles;component/Images/descripcion24.png" ToolTipService.ToolTip="Descripción"/>
+        <Image Height="20" HorizontalAlignment="Left" Margin="41,126,0,0" Name="image4" Stretch="Fill" VerticalAlignment="Top" Width="20" Source="/PruebaPaneles;component/Images/enlaceDiagrama24.png" ToolTipService.ToolTip="Enlace a diagrama"/>
+        <Image Height="20" HorizontalAlignment="Left" Margin="81,126,0,0" Name="image5" Stretch="Fill" VerticalAlignment="Top" Width="20" Source="/PruebaPaneles;component/Images/enlaceURL24.png" ToolTipService.ToolTip="URL"/>
     </Grid>
 </UserControl>

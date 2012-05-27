@@ -74,6 +74,7 @@
     <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Controls.Data.Input" />
     <Reference Include="System.Windows.Controls.Layout.Toolkit" />
+    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=2c5c654d367bf4a7" />
     <Reference Include="System.Windows.Interactivity" />
@@ -92,6 +93,9 @@
     </Compile>
     <Compile Include="Components\WindowMessage.xaml.cs">
       <DependentUpon>WindowMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\WindowProperties.xaml.cs">
+      <DependentUpon>WindowProperties.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\WindowThickness.xaml.cs">
       <DependentUpon>WindowThickness.xaml</DependentUpon>
@@ -117,6 +121,9 @@
     <Compile Include="View\NodoPentagono.xaml.cs">
       <DependentUpon>NodoPentagono.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NodoPrincipal.xaml.cs">
+      <DependentUpon>NodoPrincipal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\NodoTriangulo.xaml.cs">
       <DependentUpon>NodoTriangulo.xaml</DependentUpon>
     </Compile>
@@ -135,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\WindowMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\WindowProperties.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NodoPentagono.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NodoPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -234,6 +249,31 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enlaceURL24.png" />
+    <Resource Include="Images\enlaceURL32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icono24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icono32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imagen24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imagen32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\descripcion24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\descripcion32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enlaceDiagrama24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="PruebaPaneles.View.NodoPrincipal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="259" d:DesignWidth="400" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave" Width="370" Height="240">
+
+    <Grid x:Name="MainNode" Background="White" Height="240" Width="370" GotFocus="Canvas_GotFocus">
+        <Rectangle Fill="White" Stroke="Black" RadiusX="20" RadiusY="20" StrokeThickness="5" Height="240" Width="370" Name="rectangle1" GotFocus="Canvas_GotFocus" />
+        <TextBox Height="189" HorizontalAlignment="Left" Margin="10,10,0,0" Name="tbTitulo" VerticalAlignment="Top" Width="350" Text="Nodo Principal" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight="Bold" GotFocus="tbTitulo_GotFocus" Background="Transparent" />
+        <Image Height="32" HorizontalAlignment="Left" Margin="112,201,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="32" Source="/PruebaPaneles;component/Images/imagen32.png" ToolTipService.ToolTip="Imagen"/>
+        <Image Height="32" HorizontalAlignment="Left" Margin="150,201,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="32" Source="/PruebaPaneles;component/Images/icono32.png" ToolTipService.ToolTip="Iconos"/>
+        <Image Height="32" HorizontalAlignment="Left" Margin="188,201,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="32" Source="/PruebaPaneles;component/Images/descripcion32.png" ToolTipService.ToolTip="Descripción"/>
+        <Image Height="32" HorizontalAlignment="Left" Margin="226,201,0,0" Name="image5" Stretch="Fill" VerticalAlignment="Top" Width="32" Source="/PruebaPaneles;component/Images/enlaceURL32.png" ToolTipService.ToolTip="URL"/>
+    </Grid>
+</UserControl>
